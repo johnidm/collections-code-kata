@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+  
+    <persistence-unit name="CRUD" transaction-type="RESOURCE_LOCAL">
+           
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class>br.com.johnidouglas.sample.jpa.models.Pessoa</class>
+        <properties>
+            <property name="hibernate.connection.username" value="usuario"/>
+            <property name="hibernate.connection.password" value="senha"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/exemplos"/>
+            <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+        </properties>
+    
+    </persistence-unit>
+  
+  
+
+</persistence>
+
+
+<dependencies>
+    
+    <dependency>
+    
+        <groupId>org.hibernate</groupId>
+    
+        <artifactId>hibernate-core</artifactId>
+    
+        <version>4.0.1.Final</version>
+    
+    </dependency>
+    
+    <dependency>
+    
+        <groupId>org.hibernate</groupId>
+    
+        <artifactId>hibernate-validator</artifactId>
+    
+        <version>4.2.0.Final</version>
+    
+    </dependency>
+    
+    <dependency>
+    
+        <groupId>org.hibernate.common</groupId>
+    
+        <artifactId>hibernate-commons-annotations</artifactId>
+    
+        <version>4.0.1.Final</version>
+    
+        <classifier>tests</classifier>
+    
+    </dependency>
+    
+    <dependency>
+    
+        <groupId>org.hibernate.javax.persistence</groupId>
+    
+        <artifactId>hibernate-jpa-2.0-api</artifactId>
+    
+        <version>1.0.1.Final</version>
+    
+    </dependency>
+    
+    <dependency>
+        
+        <groupId>org.hibernate</groupId>
+        
+        <artifactId>hibernate-entitymanager</artifactId>
+        
+        <version>4.0.1.Final</version>
+        
+    </dependency>
