@@ -1,0 +1,15 @@
+@(users: List[Users])
+
+@main("Usuarios") {
+	
+	<a href="@routes.Application.addUser">Novo usuario</a>	<br />	
+
+	@for(user <- users) {
+				
+		@user.name - @user.email - @user.observacao - <a href="@routes.Application.detailUser(user.id)">Detalhar</a> | 
+			<a href="@routes.Application.deleteUser(user.id)">Excluir</a>			
+		<br />
+		
+	} 
+		
+}

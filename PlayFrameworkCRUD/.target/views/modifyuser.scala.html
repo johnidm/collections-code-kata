@@ -1,0 +1,22 @@
+@(id: Long, formUsers : Form[Users])
+
+@main("Alterar usuario") {
+	
+	<h2>Alterar dados</h2>
+				
+	@helper.form(action=routes.Application.modifyUser(id)) {
+		
+		@helper.inputText(formUsers("name"), '_label -> "Nome usuario")
+		@helper.inputText(formUsers("email"), '_label -> "E-mail usuario")
+		@helper.textarea(formUsers("observacao") , '_label -> "Observacao")
+		
+		<input type="submit" value="Alterar" />			
+	}
+	
+	@helper.form(action=routes.Application.deleteUser(id)) {
+		<input type="submit" value="Exluir" />
+	}	
+	
+	<a href="@routes.Application.listUsers()">Voltar</a>
+
+}

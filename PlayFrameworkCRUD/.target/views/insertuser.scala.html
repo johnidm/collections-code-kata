@@ -1,0 +1,17 @@
+@(formUsers : Form[Users])
+
+@main("Cadastro de usuarios") {
+	
+	<h2>Cadastro de um novo usuario</h2>
+			
+	@helper.form(action=routes.Application.insertUser()) {
+			
+		@helper.textarea(formUsers("name"))
+		@helper.textarea(formUsers("email"))
+		@helper.textarea(formUsers("observacao"))
+		
+		<input type="submit" value="Gravar" />			
+	}
+
+	<a href="@routes.Application.listUsers()">Voltar</a>	
+}
