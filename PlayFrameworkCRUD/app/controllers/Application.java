@@ -30,6 +30,9 @@ public class Application extends Controller {
 		Form<Users> formInsert = formUsers.bindFromRequest();
 
 		Users user = formInsert.get();
+		
+		System.out.println(user.name);
+		
 		Ebean.save(user);
 
 		return redirect(routes.Application.listUsers());

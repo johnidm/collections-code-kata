@@ -4,21 +4,21 @@
 # --- !Ups
 
 create table users (
-  id                        bigint not null,
+  id                        bigint auto_increment not null,
   name                      varchar(255),
   email                     varchar(255),
   observacao                varchar(255),
   constraint pk_users primary key (id))
 ;
 
-create sequence users_seq;
-
 
 
 
 # --- !Downs
 
-drop table if exists users cascade;
+SET FOREIGN_KEY_CHECKS=0;
 
-drop sequence if exists users_seq;
+drop table users;
+
+SET FOREIGN_KEY_CHECKS=1;
 
