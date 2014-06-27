@@ -14,7 +14,7 @@ public class PessoaDAO {
         
         try {
             //Obtém o factory a partir da unidade de persistência.
-            factory = Persistence.createEntityManagerFactory("crud");
+            factory = Persistence.createEntityManagerFactory("crud-eclipselink");
             //Cria um entity manager.
             entityManager = factory.createEntityManager();
             //Fecha o factory para liberar os recursos utilizado.
