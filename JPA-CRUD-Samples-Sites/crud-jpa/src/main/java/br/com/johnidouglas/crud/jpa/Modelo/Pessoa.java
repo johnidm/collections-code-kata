@@ -1,14 +1,20 @@
-package br.com.johnidouglas.sample.jpa.models;
-
-import java.util.Date;
+package br.com.johnidouglas.crud.jpa.modelo;
 
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+
+@Entity
 public class Pessoa {
-
     
+    @Id
+    @GeneratedValue
     private Long id;
+    
     private String nome;
-    private Date dataNascimento;
+  
     private String email;   
 
     public Long getId() {
@@ -27,13 +33,7 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public Date getDataNascimento() {
-        return dataNascimento;
-    }
-
-    public void setDataNascimento(Date dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
+  
 
     public String getEmail() {
         return email;

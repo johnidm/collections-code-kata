@@ -1,6 +1,6 @@
-package br.com.johnidouglas.sample.jpa.DAO;
+package br.com.johnidouglas.crud.jpa.DAO;
 
-import br.com.johnidouglas.sample.jpa.models.Pessoa;
+import br.com.johnidouglas.crud.jpa.modelo.Pessoa;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -11,17 +11,17 @@ public class PessoaDAO {
 
         EntityManagerFactory factory = null;
         EntityManager entityManager = null;
-
+        
         try {
             //Obtém o factory a partir da unidade de persistência.
-            factory = Persistence.createEntityManagerFactory("CRUD");
+            factory = Persistence.createEntityManagerFactory("crud");
             //Cria um entity manager.
             entityManager = factory.createEntityManager();
             //Fecha o factory para liberar os recursos utilizado.
-        } finally {
-            factory.close();
+        
+        } catch (Exception e) {
+           System.err.println(e.getMessage());
         }
-
         return entityManager;
     }
 

@@ -1,7 +1,7 @@
-package br.com.johnidouglas.sample.jpa.TestDAO;
+package br.com.johnidouglas.crud.jpa.TesteDAO;
 
-import br.com.johnidouglas.sample.jpa.DAO.PessoaDAO;
-import br.com.johnidouglas.sample.jpa.models.Pessoa;
+import br.com.johnidouglas.crud.jpa.DAO.PessoaDAO;
+import br.com.johnidouglas.crud.jpa.modelo.Pessoa;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -14,11 +14,7 @@ public class PessoaDAOTeste {
 
         Pessoa pessoa = new Pessoa();
         pessoa.setNome("Johni");
-        Calendar data = new GregorianCalendar();
-        data.set(Calendar.YEAR, 1983);
-        data.set(Calendar.MONTH, 11);
-        data.set(Calendar.DAY_OF_MONTH, 26);
-        pessoa.setDataNascimento(data.getTime());
+     
         pessoa.setEmail("johni@johni.br");
             
 
