@@ -1,22 +1,21 @@
 //http://localhost:8080/RestJson/v1/item
-
-
-package com.giantflyingsaucer.restjson.v1.resources;
+package br.com.johnidouglas.rest.resources;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class Item {
-    
+
     private int id;
     private String name;
     private String description;
-    
-    public Item() {}
-    
+
+    public Item() {
+    }
+
     public Item(int id, String name, String description) {
         this.id = id;
-        this.name  = name;
+        this.name = name;
         this.description = description;
     }
 
