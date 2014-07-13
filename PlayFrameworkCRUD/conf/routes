@@ -14,6 +14,14 @@ POST	/usuario/:id/remover		controllers.Application.deleteUser(id: Long)
 GET		/usuario/:id/remover		controllers.Application.deleteUser(id: Long)
 
 POST	/usuario/:id/editar			controllers.Application.modifyUser(id: Long)
+						
+POST	/validacao					controllers.ControllerValidacao.gravar()
+GET		/validacao					controllers.ControllerValidacao.mostrar()
+
+
+GET		/login						controllers.ControllerLogin.login()
+POST    /login                      controllers.ControllerLogin.authenticate()
+GET     /logout                     controllers.ControllerLogin.logout()
 														    
 
 # Map static resources from the /public folder to the /assets URL path

@@ -9,19 +9,22 @@ import play.api.templates.Html;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.index;
+import play.mvc.Security;
 
 import com.avaje.ebean.Ebean;
 
 public class Application extends Controller {
 
 	private static Form<Users> formUsers = Form.form(Users.class);
-
+	
+	
+	@Security.Authenticated(Secured.class)
 	public static Result index() {
-		return ok(index.render("Your new application is ready."));
+		return ok(views.html.index.render("Your new application is ready."));
 	}
 
 	public static Result addUser() {
+				
 		return ok(views.html.insertuser.render(formUsers));
 	}
 

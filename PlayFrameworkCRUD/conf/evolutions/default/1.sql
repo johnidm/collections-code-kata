@@ -11,6 +11,15 @@ create table users (
   constraint pk_users primary key (id))
 ;
 
+create table validacao (
+  id                        bigint auto_increment not null,
+  nome                      varchar(255),
+  email                     varchar(255),
+  cep                       varchar(255),
+  idade                     integer,
+  constraint pk_validacao primary key (id))
+;
+
 
 
 
@@ -19,6 +28,8 @@ create table users (
 SET FOREIGN_KEY_CHECKS=0;
 
 drop table users;
+
+drop table validacao;
 
 SET FOREIGN_KEY_CHECKS=1;
 

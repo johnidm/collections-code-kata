@@ -1,0 +1,47 @@
+@(formGravar : Form[Validacao])
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Validacao</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+    </head>
+    <body>
+        
+	    <h2>validacao</h2>
+				
+		@helper.form(action=routes.ControllerValidacao.gravar()) {
+												
+			@helper.inputText(field = formGravar("nome"), 'placeholder -> "Johni", '_label -> "Informe seu nome", 'size -> 50, '_showConstraints -> false, '_showErrors -> false )
+	
+			@for(error <- formGravar("nome").errors) {
+				<p>@error.message</p>
+			}					
+					
+			@helper.inputText(formGravar("email"), 'placeholder -> "johni@johni.com.br", '_label -> "Informe seu e-mail", 'size -> 50, '_showConstraints -> false, '_showErrors -> false)
+			
+			@for(error <- formGravar("email").errors) {
+				<p>@error.message</p>
+			}
+			
+			@helper.textarea(formGravar("cep"), 'placeholder -> "00000-000", '_label -> "Informe o CEP", '_showConstraints -> false, '_showErrors -> false)
+			
+			@for(error <- formGravar("cep").errors) {
+				<p>@error.message</p>
+			}
+			
+			@helper.inputText(formGravar("idade"), 'placeholder -> "25", '_label -> "Informe a Idade", '_showConstraints -> false, '_showErrors -> false)
+			
+			@for(error <- formGravar("idade").errors) {
+				<p>@error.message</p>
+			}			
+			
+			<input type="submit" value="Gravar" />			
+		}
+        
+        
+    </body>
+</html>
