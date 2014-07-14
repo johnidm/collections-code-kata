@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.johnidouglas</groupId>
+	<artifactId>Financeiro</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+				
+		<mavem.version.source>1.7</mavem.version.source>
+		<mavem.version.target>1.7</mavem.version.target>
+		<mavem.version>3.1</mavem.version>
+				
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${mavem.version}</version>
+				<configuration>
+					<source>${mavem.version.source}</source>
+					<target>${mavem.version.target}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
