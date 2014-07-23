@@ -43,5 +43,31 @@
         </properties>
     </persistence-unit>
     
+    
+    <persistence-unit name="crud-openjpa" transaction-type="RESOURCE_LOCAL">
+        <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://10.10.10.10:3306/test?autoReconnect=true"/>
+            <property name="javax.persistence.jdbc.user" value="user"/>
+            <property name="javax.persistence.jdbc.password" value="pwd"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      
+    
+            <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)" />
+            <property name="openjpa.jdbc.DBDictionary" value="mysql" />
+            <property name="openjpa.Log" value="DefaultLevel=WARN, Tool=INFO" />
+        </properties> 
+          
+    </persistence-unit>
+  
+    <persistence-unit name="crud-objectdb" transaction-type="JTA">
+        <provider>com.objectdb.jpa.Provider</provider>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="$objectdb/db/atp.odb"/>
+            <property name="javax.persistence.jdbc.user" value="admin"/>
+            <property name="javax.persistence.jdbc.password" value="admin"/>
+        </properties>
+    </persistence-unit>
+    
   
 </persistence>
