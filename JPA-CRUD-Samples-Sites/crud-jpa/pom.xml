@@ -33,12 +33,7 @@
             <artifactId>openjpa-persistence</artifactId>
             <version>2.3.0</version>
         </dependency>
-        
-        <dependency>
-            <groupId>org.datanucleus</groupId>
-            <artifactId>javax.persistence</artifactId>
-            <version>4.0.0-release</version>
-        </dependency>          
+                  
              
         <dependency>
             <groupId>org.hibernate</groupId>
