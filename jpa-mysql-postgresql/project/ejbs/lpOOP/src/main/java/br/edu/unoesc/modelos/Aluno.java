@@ -10,6 +10,7 @@ public class Aluno  {
 	@Id
 	@GeneratedValue
 	private Long id;		
+	
 	private String nome;
 
 	public String getNome() {
