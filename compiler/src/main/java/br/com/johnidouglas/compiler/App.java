@@ -1,8 +1,7 @@
 package br.com.johnidouglas.compiler;
 
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * Hello world!
@@ -10,27 +9,82 @@ import java.util.List;
  */
 public class App 
 {
-    public static void main( String[] args )
+    public static void main( String[] args ) throws IOException
     {
+    	  	   	
+    	   	   
+    	/*
+    	File arquivo = new File("c:\\linguagem.johni");
+        StringBuilder conteudo = new StringBuilder();
+        BufferedReader reader;        
+        reader = new BufferedReader(new FileReader(arquivo));
+        String text;
+             
+        while ((text = reader.readLine()) != null) {
+            conteudo.append(text);
+        } 
+        System.out.println(conteudo.toString());
+        reader.close();
+        */    	
+    	
+    	// remover comentários
+    	//String linhaDeCodigo = "boolean <Esse e um comentário> exibir()";
+    	//System.out.println(linhaDeCodigo.replaceAll("<.*?>", ""));
+    		
+    	// remove espaços desnecessários
+    	//String linhaDeCodigo = "   nome : string;      idade : int    ";
+    	///System.out.println(linhaDeCodigo.trim().replaceAll(" +", " "));
+    	
+    	
+    	// gera a lista de lexemas
+    	//String linhaDeCodigo="string { = exibir()";
+    	//ArrayList<String> lexemas= new ArrayList<String>(Arrays.asList(linhaDeCodigo.split(" ")));    	
+    	//for(String lexema : lexemas )
+    	//{
+    	//    System.out.println(" --> " + lexema);
+    	//}
+    	
+    	
+    	// identificar o token de cada lexema
+    	/*
+    	String numero = "-?\\d*\\.?\\d*";       	
+    	if ( "123456".matches(numero) ) {
+    		System.out.println("casou");
+    	}
+    	*/
+    	
+    	/*
+    	ArrayList<String> palavrasReservadas = new ArrayList<String>();    	
+    	palavrasReservadas.add("while");
+    	
+    	if (palavrasReservadas.contains("while")) {
+    		System.out.println("achou");    		
+    	} else {
+    		System.err.println("nao achou");
+    	} 
+    	*/
+    	
+    	String texto = "1exibir44___msg1";
+    	if (texto.matches("([_]|[a-z]|[A-Z][0-9])([_]|[a-z]|[A-Z]|[0-9])*")) {
+    		System.out.println("Casou");
+    	}
+    	
+    	
+    	   	
     	
     	//System.out.println("    lorem       ipsum        dolor \n sit.   ".trim().replaceAll("\\s+", " "));
+    	
+    	
+    	//String valor = "<comentário da linguagen de programação>";    	
+    	//System.out.println( valor.replaceAll("(\\s?<[^>]*>\\s?)+", "") );
+    	
     	
     	/*
     	String mytext = " hello     there   ";
     	mytext = mytext.replaceAll("( )+", " ");
     	System.out.println(mytext);
     	*/
-    	
-    	/*  
-    	String before = "   sdfsdf sf    sdf      sd f sdf s dfs    ";
-    	String after = before.trim().replaceAll(" +", " ");
-    	System.out.println(after);
-    	*/
-    	    	  
-    	//String valor = "este é um teste> teste01 <este é outro teste> teste02 <último teste> teste03 ";
-    	//System.out.println( valor.replaceAll("(\\s?<[^>]*>\\s?)+", "") );
-    	//String s = "Hi<friends>and<family>";
-    	//System.out.println(s.replaceAll("<.*?>", ""));
+       	  
     	
     	//String str = "Hi <friends> and <family>";
     	//String newStr = str.replaceAll("<[^>]*>", "");
@@ -38,14 +92,7 @@ public class App
     	
     	/*
     	
-    	List<String> palavrasChaves = new ArrayList<String>();    	
-    	palavrasChaves.add("while");
-    	
-    	if (palavrasChaves.contains("while")) {
-    		System.out.println("achou");    		
-    	} else {
-    		System.err.println("nao achou");
-    	}   	   	
+    	  	   	
     	   	
     	*/
     	/*
@@ -66,8 +113,7 @@ public class App
 		}    	
     	*/
     	
-    	
-    	
+    	    	
     	
     	// percorre os lexemas e tenta identificar ca um deles.
     	// usar expressoes regulares
@@ -99,10 +145,7 @@ public class App
     	// verifica se é um comando de atribuicao 
     	   	
     	/*
-    	String n = "-?\\d*\\.?\\d*";       	
-    	if ( "123456".matches(n) ) {
-    		System.out.println("1 - casou");
-    	}
+    	
     	
     	if ( "123.456".matches(n) ) {
     		System.out.println("2 - casou");
