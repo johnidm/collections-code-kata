@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	
+	
+	<persistence-unit name="eclipselink.mysql" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+					
+		<properties>
+			
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/crud" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="" />
+
+			<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
+			<property name="eclipselink.create-ddl-jdbc-file-name" value="createDDL_ddlGeneration.jdbc" />
+			<property name="eclipselink.drop-ddl-jdbc-file-name" value="dropDDL_ddlGeneration.jdbc" />
+			<property name="eclipselink.ddl-generation.output-mode" value="both" />
+
+		</properties>
+		
+	</persistence-unit>
+	
+	<persistence-unit name="eclipselink.postgresql" transaction-type="RESOURCE_LOCAL">
+		
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>		
+		<properties>		
+		      
+			<property name=" javax.persistence.jdbc.driver " value="org.postgresql.Driver" />
+			<property name=" javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/crud" />
+			<property name=" javax.persistence.jdbc.user " value="postgres" />
+			<property name=" javax.persistence.jdbc.password " value="postgres" /> 
+			<property name="eclipselink.ddl-generation" value="create-tables" />
+			<property name="eclipselink.ddl-generation.output-mode" value="database" />
+
+		</properties>
+		
+	</persistence-unit>
+	
+</persistence>

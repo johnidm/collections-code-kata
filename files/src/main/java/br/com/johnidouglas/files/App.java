@@ -12,12 +12,25 @@ public class App
  
 	private final static String ARQUIVO = "c:\\arquivo.txt";
 	
-	public static void main( String[] args ) throws IOException
+	
+	public static void main( String[] args ) 
     {
-		lerAquivo();
-		gravarArquivo();
+		File arquivo = new File(ARQUIVO);
+        StringBuilder conteudo = new StringBuilder();
+        BufferedReader reader;
+      
+        reader = new BufferedReader(new FileReader(arquivo));
+        String text;
+             
+        while ((text = reader.readLine()) != null) {
+            conteudo.append(text);
+        } 
+        System.out.println(conteudo.toString());
+        reader.close();
+        
     }
 	
+	/*
 	public static void gravarArquivo() throws IOException {
 		
 		File file = new File(ARQUIVO);
@@ -29,6 +42,7 @@ public class App
 		writer.close(); //Fechando conexão e escrita do arquivo.
 	}
     
+    */
     public static void lerAquivo() throws IOException {
     	
     	/*
