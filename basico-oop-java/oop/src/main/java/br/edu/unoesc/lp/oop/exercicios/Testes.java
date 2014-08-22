@@ -7,7 +7,7 @@ public class Testes {
     {
 		
 		//EntradaDados entrada = new EntradaDadosConsole();
-		//EntradaDados entrada = new EntradaDadosGUI();				
+		EntradaDados entrada = new EntradaDadosGUI();				
 		//String nome = entrada.lerNome();
 		//entrada.mostrarNome(nome);
 		

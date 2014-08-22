@@ -11,7 +11,10 @@ public class App
 {
     public static void main( String[] args ) throws IOException
     {
-    	  	   	
+     	
+    	
+    	ArrayList<Token> tokens = new ArrayList<Token>();
+    	
     	   	   
     	/*
     	File arquivo = new File("c:\\linguagem.johni");
@@ -33,16 +36,28 @@ public class App
     		
     	// remove espaços desnecessários
     	//String linhaDeCodigo = "   nome : string;      idade : int    ";
-    	///System.out.println(linhaDeCodigo.trim().replaceAll(" +", " "));
+    	linhacoidigo = (linhaDeCodigo.trim().replaceAll(" +", " "));
     	
     	
     	// gera a lista de lexemas
-    	//String linhaDeCodigo="string { = exibir()";
-    	//ArrayList<String> lexemas= new ArrayList<String>(Arrays.asList(linhaDeCodigo.split(" ")));    	
-    	//for(String lexema : lexemas )
-    	//{
-    	//    System.out.println(" --> " + lexema);
-    	//}
+    	String linhaDeCodigo="string { = exibir()";
+    	ArrayList<String> lexemas= new ArrayList<String>(Arrays.asList(linhaDeCodigo.split(" ")));    	
+    	for(String lexema : lexemas )
+    	{
+    	    if (lexema.matches("-?\\d*\\.?\\d*") {
+    	    	
+    	    	tokens.add( "numero", lexema );
+    	    	
+    	    	
+    	    	
+    	    }
+    	
+    	
+    	
+    	
+    	
+    	
+    	}
     	
     	
     	// identificar o token de cada lexema

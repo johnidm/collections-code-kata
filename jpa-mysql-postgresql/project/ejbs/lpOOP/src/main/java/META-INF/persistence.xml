@@ -20,7 +20,6 @@
 			<property name="eclipselink.ddl-generation.output-mode"
 				value="both" />
 
-
 		</properties>
 	</persistence-unit>
 
