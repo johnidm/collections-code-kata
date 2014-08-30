@@ -6,7 +6,7 @@ public class JogoForca {
 
 	Palavras palavras = new PalavrasFacil();
 
-	//InterfaceGrafica grafico = new InterfaceGraficaConsole();
+	InterfaceGrafica grafico = new InterfaceGraficaConsole();
 	InterfaceGrafica grafico = new InterfaceGraficaGUI();
 
 	public void play() {

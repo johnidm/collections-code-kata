@@ -28,5 +28,4 @@ brancos      		= [\n| |\t]
 {inteiro} {  log(yytext(), yyline, yycolumn); return new PascalToken( "numero", yytext()); }
 {brancos} {  /**/ }
 
-. { throw new RuntimeException("Caractere invalido \""+yytext() + 
-						"\" na linha "+yyline+", coluna "+yycolumn); }
+. { log(yytext(), yyline, yycolumn }

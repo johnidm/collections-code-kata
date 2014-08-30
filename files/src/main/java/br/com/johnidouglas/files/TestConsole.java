@@ -12,11 +12,7 @@ import javax.swing.JTextField;
 public class TestConsole {
 
 	public static void main(String[] args) throws InterruptedException, IOException {
-		
-			
-		JButtonAction2 tela = new JButtonAction2();
-		tela.createFrame();
-		
+					
 		
 
 	}
