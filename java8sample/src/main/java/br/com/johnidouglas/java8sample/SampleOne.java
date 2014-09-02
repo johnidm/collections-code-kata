@@ -17,8 +17,7 @@ public class SampleOne
 		} else {
 			return numero02;
 		}		
-	}
-	
+	}	
 	
     public static void main( String[] args )
     {    	
