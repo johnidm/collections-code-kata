@@ -1,4 +1,4 @@
-package br.com.johnidouglas.crud.jpa.Modelo;
+package br.com.johnidouglas.crud.jpa.modelo;
 // http://jamacedo.com/2010/06/crud-jsf-2-0-hibernate-exemplo-gerenciando-livros-2/
 
 

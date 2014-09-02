@@ -14,11 +14,11 @@ public class PessoaDAO {
         
         try {
             //Obtém o factory a partir da unidade de persistência.
-            //factory = Persistence.createEntityManagerFactory("crud.hibenate");
+            factory = Persistence.createEntityManagerFactory("crud.hibenate");
             //factory = Persistence.createEntityManagerFactory("crud.hibenate");
             //factory = Persistence.createEntityManagerFactory("crud.datanucleus");
             //factory = Persistence.createEntityManagerFactory("crud.openjpa");
-            factory = Persistence.createEntityManagerFactory("crud.objectdb");
+            //factory = Persistence.createEntityManagerFactory("crud.objectdb");
             
             //Cria um entity manager.
             entityManager = factory.createEntityManager();

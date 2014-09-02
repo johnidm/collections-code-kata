@@ -1,13 +1,19 @@
 package br.com.johnidouglas.crud.jpa.modelo;
 
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import br.com.johnidouglas.crud.jpa.listener.PessoaListener;
+
 
 @Entity
-public class Pessoa {
+@EntityListeners({PessoaListener.class})
+public class Pessoa implements Serializable {
     
     @Id
     @GeneratedValue

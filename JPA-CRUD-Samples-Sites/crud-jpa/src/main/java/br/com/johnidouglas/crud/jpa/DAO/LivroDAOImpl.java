@@ -1,9 +1,12 @@
 package br.com.johnidouglas.crud.jpa.DAO;
 
-import br.com.johnidouglas.crud.jpa.Modelo.Livro;
+import br.com.johnidouglas.crud.jpa.modelo.Livro;
 import br.com.johnidouglas.crud.jpa.util.HibernateUtil;
+
 import java.util.List;
+
 import javax.transaction.Transaction;
+
 import org.hibernate.Session;
 
 public class LivroDAOImpl implements LivroDAO {

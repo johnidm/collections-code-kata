@@ -3,8 +3,10 @@ package br.com.johnidouglas.crud.jpa.Contolador;
 
 import br.com.johnidouglas.crud.jpa.DAO.LivroDAO;
 import br.com.johnidouglas.crud.jpa.DAO.LivroDAOImpl;
-import br.com.johnidouglas.crud.jpa.Modelo.Livro;
+import br.com.johnidouglas.crud.jpa.modelo.Livro;
+
 import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.model.DataModel;

@@ -1,6 +1,7 @@
 package br.com.johnidouglas.crud.jpa.DAO;
 
-import br.com.johnidouglas.crud.jpa.Modelo.Livro;
+import br.com.johnidouglas.crud.jpa.modelo.Livro;
+
 import java.util.List;
 
 public interface LivroDAO {

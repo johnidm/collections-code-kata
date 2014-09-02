@@ -1,7 +1,8 @@
 package br.com.johnidouglas.crud.jpa.util;
 
 
-import br.com.johnidouglas.crud.jpa.Modelo.Livro;
+import br.com.johnidouglas.crud.jpa.modelo.Livro;
+
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 
