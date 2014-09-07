@@ -4,13 +4,13 @@ print("Init program")
 
 function calc_values(a)
 
-local sum = 0
+	local sum = 0
 
-for val in ipairs(a) do
-sum = sum + val
-end
+	for val in ipairs(a) do
+		sum = sum + val
+	end
 
-return math.min( unpack(a) ), math.max( unpack(a) ), sum
+	return math.min( unpack(a) ), math.max( unpack(a) ), sum
 
 end
 

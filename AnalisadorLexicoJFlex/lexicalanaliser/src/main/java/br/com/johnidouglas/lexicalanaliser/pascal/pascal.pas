@@ -1,4 +1,5 @@
-program
+program 
+  aaaa
   var Idade : integer;
   var ValorSalario: real;
 begin

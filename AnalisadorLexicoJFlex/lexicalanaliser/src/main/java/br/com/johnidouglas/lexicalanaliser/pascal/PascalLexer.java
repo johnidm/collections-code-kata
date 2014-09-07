@@ -35,8 +35,12 @@ public class PascalLexer {
    * Translates characters to character classes
    */
   private static final String ZZ_CMAP_PACKED = 
-    "\11\0\1\3\1\3\1\4\1\4\1\4\22\0\1\3\17\0\1\1"+
-    "\11\2\102\0\1\3\10\0\1\4\u1fa2\0\1\4\1\4\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\udfe6\0";
+    "\11\0\1\3\1\3\1\33\1\33\1\33\22\0\1\3\11\0\1\20"+
+    "\3\0\1\5\1\0\1\1\11\2\1\4\1\5\1\0\1\21\1\17"+
+    "\2\0\32\6\4\0\1\6\1\0\1\11\1\26\1\6\1\32\1\10"+
+    "\1\27\1\16\1\30\1\13\2\6\1\12\1\24\1\14\1\23\1\22"+
+    "\1\6\1\7\1\31\1\15\1\6\1\25\4\6\1\0\1\3\10\0"+
+    "\1\33\u1fa2\0\1\33\1\33\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\udfe6\0";
 
   /** 
    * Translates characters to character classes
@@ -49,10 +53,13 @@ public class PascalLexer {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\1\0\1\1\2\2\1\3";
+    "\1\0\1\1\2\2\1\3\2\4\5\5\1\6\1\7"+
+    "\3\5\1\10\4\5\1\11\6\5\1\12\3\5\1\13"+
+    "\1\5\1\14\1\15\1\5\1\16\4\5\1\17\2\5"+
+    "\1\20\1\21";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[5];
+    int [] result = new int[48];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -77,10 +84,15 @@ public class PascalLexer {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\5\0\5\0\12\0\5";
+    "\0\0\0\34\0\34\0\70\0\34\0\124\0\34\0\160"+
+    "\0\214\0\250\0\304\0\340\0\34\0\34\0\374\0\u0118"+
+    "\0\u0134\0\34\0\u0150\0\u016c\0\u0188\0\u01a4\0\160\0\u01c0"+
+    "\0\u01dc\0\u01f8\0\u0214\0\u0230\0\u024c\0\160\0\u0268\0\u0284"+
+    "\0\u02a0\0\160\0\u02bc\0\160\0\160\0\u02d8\0\160\0\u02f4"+
+    "\0\u0310\0\u032c\0\u0348\0\160\0\u0364\0\u0380\0\160\0\160";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[5];
+    int [] result = new int[48];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -103,10 +115,42 @@ public class PascalLexer {
   private static final int [] ZZ_TRANS = zzUnpackTrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\2\1\3\1\4\1\5\7\0\2\4\2\0";
+    "\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11"+
+    "\1\12\2\10\1\13\1\10\1\14\1\10\1\15\1\16"+
+    "\1\2\1\17\2\10\1\20\1\21\4\10\36\0\2\4"+
+    "\52\0\1\22\13\0\2\10\3\0\11\10\3\0\11\10"+
+    "\2\0\2\10\3\0\2\10\1\23\6\10\3\0\11\10"+
+    "\2\0\2\10\3\0\4\10\1\24\1\10\1\25\2\10"+
+    "\3\0\11\10\2\0\2\10\3\0\6\10\1\26\2\10"+
+    "\3\0\5\10\1\27\3\10\2\0\2\10\3\0\11\10"+
+    "\3\0\6\10\1\30\2\10\2\0\2\10\3\0\1\10"+
+    "\1\31\7\10\3\0\11\10\2\0\2\10\3\0\3\10"+
+    "\1\32\5\10\3\0\11\10\2\0\2\10\3\0\2\10"+
+    "\1\33\6\10\3\0\11\10\2\0\2\10\3\0\3\10"+
+    "\1\34\5\10\3\0\11\10\2\0\2\10\3\0\11\10"+
+    "\3\0\7\10\1\35\1\10\2\0\2\10\3\0\11\10"+
+    "\3\0\10\10\1\36\2\0\2\10\3\0\7\10\1\37"+
+    "\1\10\3\0\11\10\2\0\2\10\3\0\2\10\1\40"+
+    "\6\10\3\0\11\10\2\0\2\10\3\0\11\10\3\0"+
+    "\1\10\1\41\7\10\2\0\2\10\3\0\1\10\1\42"+
+    "\7\10\3\0\11\10\2\0\2\10\3\0\10\10\1\43"+
+    "\3\0\11\10\2\0\2\10\3\0\4\10\1\44\4\10"+
+    "\3\0\11\10\2\0\2\10\3\0\2\10\1\45\6\10"+
+    "\3\0\11\10\2\0\2\10\3\0\2\10\1\46\6\10"+
+    "\3\0\11\10\2\0\2\10\3\0\6\10\1\47\2\10"+
+    "\3\0\11\10\2\0\2\10\3\0\10\10\1\50\3\0"+
+    "\11\10\2\0\2\10\3\0\5\10\1\51\3\10\3\0"+
+    "\11\10\2\0\2\10\3\0\10\10\1\52\3\0\11\10"+
+    "\2\0\2\10\3\0\1\10\1\53\7\10\3\0\11\10"+
+    "\2\0\2\10\3\0\6\10\1\54\2\10\3\0\11\10"+
+    "\2\0\2\10\3\0\2\10\1\55\6\10\3\0\11\10"+
+    "\2\0\2\10\3\0\3\10\1\56\5\10\3\0\11\10"+
+    "\2\0\2\10\3\0\1\10\1\57\7\10\3\0\11\10"+
+    "\2\0\2\10\3\0\11\10\3\0\2\10\1\60\6\10"+
+    "\1\0";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[15];
+    int [] result = new int[924];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -144,10 +188,11 @@ public class PascalLexer {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\2\11\1\1\1\11";
+    "\1\0\2\11\1\1\1\11\1\1\1\11\5\1\2\11"+
+    "\3\1\1\11\36\1";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[5];
+    int [] result = new int[48];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -250,7 +295,7 @@ public class PascalLexer {
     char [] map = new char[0x110000];
     int i = 0;  /* index in packed string  */
     int j = 0;  /* index in unpacked array */
-    while (i < 70) {
+    while (i < 142) {
       int  count = packed.charAt(i++);
       char value = packed.charAt(i++);
       do map[j++] = value; while (--count > 0);
@@ -595,18 +640,73 @@ public class PascalLexer {
 
       switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
         case 1: 
-          { throw new RuntimeException("Caractere invalido \""+yytext() + 
-						"\" na linha "+yyline+", coluna "+yycolumn);
+          { log(yytext(), yyline, yycolumn);
           }
-        case 4: break;
+        case 18: break;
         case 2: 
-          { log(yytext(), yyline, yycolumn); return new PascalToken( "numero", yytext());
+          { log(yytext(), yyline, yycolumn); return new PascalToken( "numero", yytext() );
           }
-        case 5: break;
+        case 19: break;
         case 3: 
           { /**/
           }
-        case 6: break;
+        case 20: break;
+        case 4: 
+          { log(yytext(), yyline, yycolumn); return new PascalToken( yytext(), "" );
+          }
+        case 21: break;
+        case 5: 
+          { log(yytext(), yyline, yycolumn); return new PascalToken( "id", yytext() );
+          }
+        case 22: break;
+        case 6: 
+          { log(yytext(), yyline, yycolumn); return new PascalToken( ">", "" );
+          }
+        case 23: break;
+        case 7: 
+          { log(yytext(), yyline, yycolumn); return new PascalToken( "*", "" );
+          }
+        case 24: break;
+        case 8: 
+          { log(yytext(), yyline, yycolumn); return new PascalToken( ":=", "" );
+          }
+        case 25: break;
+        case 9: 
+          { log(yytext(), yyline, yycolumn); return new PascalToken( "if", "" );
+          }
+        case 26: break;
+        case 10: 
+          { log(yytext(), yyline, yycolumn); return new PascalToken( "end", "" );
+          }
+        case 27: break;
+        case 11: 
+          { log(yytext(), yyline, yycolumn); return new PascalToken( "var", "" );
+          }
+        case 28: break;
+        case 12: 
+          { log(yytext(), yyline, yycolumn); return new PascalToken( "real", "" );
+          }
+        case 29: break;
+        case 13: 
+          { log(yytext(), yyline, yycolumn); return new PascalToken( "else", "" );
+          }
+        case 30: break;
+        case 14: 
+          { log(yytext(), yyline, yycolumn); return new PascalToken( "then", "" );
+          }
+        case 31: break;
+        case 15: 
+          { log(yytext(), yyline, yycolumn); return new PascalToken( "begin", "" );
+          }
+        case 32: break;
+        case 16: 
+          { log(yytext(), yyline, yycolumn); return new PascalToken( "integer", "" );
+          }
+        case 33: break;
+        case 17: 
+          { log(yytext(), yyline, yycolumn); return new PascalToken( "program", "" );
+          }
+        case 34: break;
         default: 
           if (zzInput == YYEOF && zzStartRead == zzCurrentPos) {
             zzAtEOF = true;

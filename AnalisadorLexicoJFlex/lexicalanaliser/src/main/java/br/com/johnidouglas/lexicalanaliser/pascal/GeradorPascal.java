@@ -10,7 +10,7 @@ import java.io.File;
 public class GeradorPascal {
 	public static void main(String[] args) {
 
-		String path = "c://";
+		String path = "/home/johni/Projects/collections-code-kata/AnalisadorLexicoJFlex/lexicalanaliser/src/main/java/br/com/johnidouglas/lexicalanaliser/";
 		String arquivo = path + "pascal/Pascal.lex";
 
 		File file = new File(arquivo);

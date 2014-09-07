@@ -11,7 +11,7 @@ public class PascalAnalisador {
 				
         try {
         	
-        	String sourcecode = "c://programa.pas";
+        	String sourcecode = "/home/johni/Projects/collections-code-kata/AnalisadorLexicoJFlex/lexicalanaliser/src/main/java/br/com/johnidouglas/lexicalanaliser/pascal/pascal.pas";
         	        	        	        	
             PascalLexer lexer = new PascalLexer( new FileReader( sourcecode ) );
             

@@ -2,7 +2,7 @@ package exer02;
 
 import java.io.IOException;
 
-
+import java.util.Base64;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 

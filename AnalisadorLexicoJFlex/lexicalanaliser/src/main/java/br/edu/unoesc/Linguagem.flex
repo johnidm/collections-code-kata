@@ -50,9 +50,7 @@ OPERADORES_MATEMATICOS = ("+" | "-" | "*" | "/")
 
 "("								{ imprimir("Abre parenteses", yytext()); }
 ")"								{ imprimir("Fecha parenteses", yytext()); }
-","								{ imprimir("Separador de intrucoes", yytext()); }
-	
-
+","								{ imprimir("Separador de instrucoes", yytext()); }
 
 "=="							{ imprimir("Operador igualdade", yytext()); }
 
