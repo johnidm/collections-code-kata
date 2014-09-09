@@ -12,7 +12,7 @@ import java_cup.runtime.*;
 %type PascalToken
 
 inteiro          	= 0|[1-9][0-9]*
-brancos      		= [\n| |\t]
+brancos			= [\n| |\t|\r]
 delimitadores		= (":" | ";" | ".")
 identificadores		= [A-Za-z_][A-Za-z_0-9]*
 
@@ -30,8 +30,12 @@ identificadores		= [A-Za-z_][A-Za-z_0-9]*
 "then"		{ log(yytext(), yyline, yycolumn); return new PascalToken( "then", "" ); }
 "else"		{ log(yytext(), yyline, yycolumn); return new PascalToken( "else", "" ); }
 "end" 		{ log(yytext(), yyline, yycolumn); return new PascalToken( "end", "" ); }
+
+
+
 {identificadores}	{ log(yytext(), yyline, yycolumn); return new PascalToken( "id", yytext() ); }
 {delimitadores}		{ log(yytext(), yyline, yycolumn); return new PascalToken( yytext(), "" ); }
 {inteiro} 		{ log(yytext(), yyline, yycolumn); return new PascalToken( "numero", yytext() ); }
 {brancos} 		{ /**/ }
+
 . { log(yytext(), yyline, yycolumn); }

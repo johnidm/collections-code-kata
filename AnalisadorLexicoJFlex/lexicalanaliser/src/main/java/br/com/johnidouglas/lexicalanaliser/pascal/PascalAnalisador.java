@@ -1,9 +1,9 @@
 package br.com.johnidouglas.lexicalanaliser.pascal;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
-import java.io.StringReader;
-
-import java_cup.runtime.Symbol;
+import java.io.InputStreamReader;
 
 public class PascalAnalisador {
 
@@ -11,9 +11,16 @@ public class PascalAnalisador {
 				
         try {
         	
-        	String sourcecode = "/home/johni/Projects/collections-code-kata/AnalisadorLexicoJFlex/lexicalanaliser/src/main/java/br/com/johnidouglas/lexicalanaliser/pascal/pascal.pas";
-        	        	        	        	
-            PascalLexer lexer = new PascalLexer( new FileReader( sourcecode ) );
+        	String sourcecode = "/home/johni/Projects/collections-code-kata/AnalisadorLexicoJFlex/lexicalanaliser/src/main/java/br/com/johnidouglas/lexicalanaliser/pascal/";
+        	//sourcecode += "pascal.pas";
+        	sourcecode += "prj01.pas";
+        	
+        	File in =  new File(sourcecode);
+        	InputStreamReader r = new InputStreamReader(new FileInputStream(in));
+        	System.out.println(r.getEncoding());
+        	
+            //PascalLexer lexer = new PascalLexer( new FileReader( sourcecode ) );
+        	PascalLexer lexer = new PascalLexer( r );
             
             PascalToken token;                                                                   
             while ((token = lexer.yylex()) != null)  {
