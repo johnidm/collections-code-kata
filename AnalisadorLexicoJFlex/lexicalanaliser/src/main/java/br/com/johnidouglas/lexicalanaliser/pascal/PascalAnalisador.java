@@ -13,7 +13,7 @@ public class PascalAnalisador {
         	
         	String sourcecode = "/home/johni/Projects/collections-code-kata/AnalisadorLexicoJFlex/lexicalanaliser/src/main/java/br/com/johnidouglas/lexicalanaliser/pascal/";
         	//sourcecode += "pascal.pas";
-        	sourcecode += "prj01.pas";
+        	sourcecode += "prj02.pas";
         	
         	File in =  new File(sourcecode);
         	InputStreamReader r = new InputStreamReader(new FileInputStream(in));

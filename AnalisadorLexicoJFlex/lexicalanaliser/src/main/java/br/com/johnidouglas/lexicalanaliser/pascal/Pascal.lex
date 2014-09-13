@@ -16,6 +16,22 @@ brancos			= [\n| |\t|\r]
 delimitadores		= (":" | ";" | ".")
 identificadores		= [A-Za-z_][A-Za-z_0-9]*
 
+leftbrace       = \{
+rightbrace      = \}
+comment_body    = {nonrightbrace}*
+nonrightbrace   = [^}]
+comentario_1	= {leftbrace}{comment_body}{rightbrace}
+
+comentario_2	= "/*" [^*] ~"*/" | "/*" "*"+ "/"
+
+LineTerminator = \r|\n|\r\n
+InputCharacter = [^\r|\n|]
+comentario_3	= "//" {InputCharacter}* {LineTerminator}
+
+
+
+
+
 %%
 
 "real"			{ log(yytext(), yyline, yycolumn); return new PascalToken( "real", "" ); }
@@ -31,6 +47,10 @@ identificadores		= [A-Za-z_][A-Za-z_0-9]*
 "else"		{ log(yytext(), yyline, yycolumn); return new PascalToken( "else", "" ); }
 "end" 		{ log(yytext(), yyline, yycolumn); return new PascalToken( "end", "" ); }
 
+
+{comentario_1}  { log("Comentario tipo 1 " + yytext() , yyline, yycolumn);  }
+{comentario_2}  { log("Comentario tipo 2" + yytext() , yyline, yycolumn);  }
+{comentario_3}  { log("Comentario tipo 3" + yytext() , yyline, yycolumn);  }
 
 
 {identificadores}	{ log(yytext(), yyline, yycolumn); return new PascalToken( "id", yytext() ); }

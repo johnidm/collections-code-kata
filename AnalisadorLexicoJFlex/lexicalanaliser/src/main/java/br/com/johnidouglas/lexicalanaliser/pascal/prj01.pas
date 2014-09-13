@@ -1,2 +1,4 @@
+{ C comment }
+
 program
 var

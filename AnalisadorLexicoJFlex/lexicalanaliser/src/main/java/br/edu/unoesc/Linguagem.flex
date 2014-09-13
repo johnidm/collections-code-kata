@@ -34,6 +34,8 @@ INTEIRO = 0|[1-9][0-9]*
 PONTOFLUTUANTE = [0-9][0-9]*"."[0-9]+
 OPERADORES_MATEMATICOS = ("+" | "-" | "*" | "/")
 
+
+
 %%
 
 "for"							{ imprimir("Palavra reservada for", yytext()); }
@@ -42,6 +44,7 @@ OPERADORES_MATEMATICOS = ("+" | "-" | "*" | "/")
 
 "if"                           	{ imprimir("Intrucao if", yytext()); }
 "then"                         	{ imprimir("Intrucao then", yytext()); }
+{comentario}					{ imprimir("Comenatario", yytext()); }
 {BRANCO} 						{ imprimir("Branco", yytext()); }
 {ID} 							{ imprimir("Identificador", yytext()); }
 {INTEIRO} 						{ imprimir("Numero", yytext()); }
