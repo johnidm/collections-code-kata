@@ -1,0 +1,19 @@
+package br.com.johnidouglas.frontendcompiler.two;
+
+import java_cup.runtime.*; 
+import java.io.*;
+import java.util.*;
+
+terminal _WHILE, _TRUE, _FALSE, _PONTO_E_VIRGULA, _SEPARADOR_BOOL;
+
+non terminal __WHILE, __BOOL, __EXP, __BOOLS;
+
+start with __EXP;
+
+__EXP   ::= __WHILE __EXP | ; 
+__WHILE ::= _WHILE __BOOLS _PONTO_E_VIRGULA;
+
+__BOOLS ::= __BOOLS _SEPARADOR_BOOL __BOOL | __BOOL;
+
+__BOOL  ::= _TRUE | _FALSE;
+
