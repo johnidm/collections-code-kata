@@ -1,4 +1,5 @@
 <?php
+    // http://localhost/collections-code-kata/basic-slim-php/server.php
 	require 'vendor/autoload.php';
 
 	/*
