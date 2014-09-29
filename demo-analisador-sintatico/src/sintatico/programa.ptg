@@ -3,7 +3,5 @@ inicio
 para 1 ate 10 faca 
    valor <- valor * 10 
    
-para 2 ate 20 faca 
-   valor <- valor * 20 
    
 fim

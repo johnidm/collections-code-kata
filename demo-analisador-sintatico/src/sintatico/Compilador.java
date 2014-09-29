@@ -9,7 +9,7 @@ public class Compilador {
 
 	public static void main(String[] args) throws Exception {
 		
-		String path = "";
+		String path = "/home/johni/Projects/collections-code-kata/demo-analisador-sintatico/src/sintatico/";
 		
 		String sourcecode = path + "programa.ptg"; 
 			
@@ -17,9 +17,11 @@ public class Compilador {
 		
 		InputStreamReader r = new InputStreamReader(new FileInputStream(in));
 		
+		/*
 		AnalisadorLexico lexico = new AnalisadorLexico( r );	
 		AnalisadorSintatico sintatico = new AnalisadorSintatico(lexico);
 		sintatico.parse();
+		*/
 		
 		
 	}	
