@@ -1,0 +1,5 @@
+while true ; 
+
+while false ;
+
+while false <> true <> true ;
