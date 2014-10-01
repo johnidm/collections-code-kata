@@ -1,0 +1,12 @@
+unit Util.Classes;
+
+interface
+
+type
+  TProessamentoNotaFiscal = class
+
+  end;
+
+implementation
+
+end.

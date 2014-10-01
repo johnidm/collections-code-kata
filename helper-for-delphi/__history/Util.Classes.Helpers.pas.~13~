@@ -1,0 +1,28 @@
+unit Util.Classes.Helpers;
+
+interface
+
+uses
+  System.SysUtils,
+  Util.Classes;
+
+type
+  TProessamentoNotaFiscalBackup = class helper for TProessamentoNotaFiscal
+  public
+    function GravaBackup(): Boolean;
+  end;
+
+implementation
+
+uses
+  Vcl.Dialogs;
+
+{ TProessamentoNotaFiscalBackup }
+
+function TProessamentoNotaFiscalBackup.GravaBackup: Boolean;
+begin
+  ShowMessage('Realizando backup da nota ' + NumerNota.ToString +
+    sLineBreak + 'XML' + sLineBreak + XML);
+end;
+
+end.

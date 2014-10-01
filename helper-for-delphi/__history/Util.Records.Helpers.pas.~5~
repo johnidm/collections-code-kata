@@ -1,0 +1,26 @@
+unit Util.Records.Helpers;
+
+interface
+
+type
+  TProcessarLotes = record
+  public
+    NumeroLote: string;
+    procedure Executar();
+  end;
+
+
+
+implementation
+
+uses
+  Vcl.Dialogs;
+
+{ TProcessarLotes }
+
+procedure TProcessarLotes.Executar;
+begin
+  ShowMessage('Processando lote ' + NumeroLote);
+end;
+
+end.

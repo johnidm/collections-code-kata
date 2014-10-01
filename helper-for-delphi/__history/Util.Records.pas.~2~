@@ -1,0 +1,14 @@
+unit Util.Records;
+
+interface
+
+type
+  TProcessarLotes = record
+  public
+    NumeroLote: string;
+    procedure Executar();
+  end;
+
+implementation
+
+end.
