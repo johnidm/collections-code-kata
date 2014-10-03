@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2014/06/26 16:25:22.000.861,=C:\Users\johni\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2014/07/01 18:32:29.000.587,=C:\Users\johni\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2014/07/10 15:36:39.000.488,=C:\Users\johni\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2014/07/11 15:27:05.000.457,=C:\Users\johni\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2014/10/01 10:48:02.000.196,=C:\Users\johni\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2014/10/01 10:48:12.000.842,=C:\Users\johni\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2014/10/01 10:53:27.000.322,C:\Users\johni\Documents\Embarcadero\Studio\Projects\Unit2.pas=D:\projetos-estudo\collections-code-kata\helper-for-delphi\Helpers.pas</Transaction>
+    <Transaction>2014/10/01 10:53:30.000.944,C:\Users\johni\Documents\Embarcadero\Studio\Projects\Unit1.dfm=D:\projetos-estudo\collections-code-kata\helper-for-delphi\Main.dfm</Transaction>
+    <Transaction>2014/10/01 10:53:30.000.944,C:\Users\johni\Documents\Embarcadero\Studio\Projects\Unit1.pas=D:\projetos-estudo\collections-code-kata\helper-for-delphi\Main.pas</Transaction>
+    <Transaction>2014/10/01 10:53:42.000.197,C:\Users\johni\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\projetos-estudo\collections-code-kata\helper-for-delphi\ProgramaHelpers.dproj</Transaction>
+    <Transaction>2014/10/01 11:12:37.000.968,D:\projetos-estudo\collections-code-kata\helper-for-delphi\Helpers.pas=D:\projetos-estudo\collections-code-kata\helper-for-delphi\Strings.Helpers.pas</Transaction>
+    <Transaction>2014/10/01 11:12:47.000.312,D:\projetos-estudo\collections-code-kata\helper-for-delphi\Strings.Helpers.pas=D:\projetos-estudo\collections-code-kata\helper-for-delphi\Util.Strings.Helpers.pas</Transaction>
+    <Transaction>2014/10/01 11:13:23.000.085,=D:\projetos-estudo\collections-code-kata\helper-for-delphi\Unit1.pas</Transaction>
+    <Transaction>2014/10/01 11:13:29.000.915,D:\projetos-estudo\collections-code-kata\helper-for-delphi\Unit1.pas=D:\projetos-estudo\collections-code-kata\helper-for-delphi\Util.Records.Helpers.pas</Transaction>
+    <Transaction>2014/10/01 11:16:06.000.740,=D:\projetos-estudo\collections-code-kata\helper-for-delphi\Unit1.pas</Transaction>
+    <Transaction>2014/10/01 11:16:14.000.451,D:\projetos-estudo\collections-code-kata\helper-for-delphi\Unit1.pas=D:\projetos-estudo\collections-code-kata\helper-for-delphi\Util.Records.pas</Transaction>
+    <Transaction>2014/10/01 11:21:28.397,=D:\projetos-estudo\collections-code-kata\helper-for-delphi\Unit1.pas</Transaction>
+    <Transaction>2014/10/01 11:21:43.884,D:\projetos-estudo\collections-code-kata\helper-for-delphi\Util.Classes.Helpers.pas=D:\projetos-estudo\collections-code-kata\helper-for-delphi\Unit1.pas</Transaction>
+    <Transaction>2014/10/01 11:21:54.226,=D:\projetos-estudo\collections-code-kata\helper-for-delphi\Unit1.pas</Transaction>
+    <Transaction>2014/10/01 11:22:00.745,D:\projetos-estudo\collections-code-kata\helper-for-delphi\Util.Classes.pas=D:\projetos-estudo\collections-code-kata\helper-for-delphi\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>
