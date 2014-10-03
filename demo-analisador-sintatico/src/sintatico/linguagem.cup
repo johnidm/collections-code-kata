@@ -1,0 +1,25 @@
+package sintatico;
+
+import java_cup.runtime.*; 
+import java.io.*;
+import java.util.*;
+
+
+terminal INICIO, FIM, PARA, ATE, FACA, NUMERO, ID, MULTIPLICACAO, ATRIBUICAO, VERDADEIRO, SE;
+ 
+non terminal _INICIO_, _LACO_, _LACOS_, _BLOCO_, _SES_, _SE_, _BLOCOS_;
+
+start with _INICIO_;
+
+_INICIO_ ::= INICIO _BLOCOS_ FIM;
+
+_BLOCOS_ ::= _BLOCOS_ _BLOCO_ | _BLOCO_;
+ 
+_BLOCO_ ::=  _SE_ | _LACO_ ;
+
+
+_SE_ ::= SE VERDADEIRO FACA ID;
+_LACO_ ::= PARA NUMERO ATE NUMERO FACA ID ATRIBUICAO ID MULTIPLICACAO NUMERO;
+
+
+

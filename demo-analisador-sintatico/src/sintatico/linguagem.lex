@@ -29,6 +29,9 @@ ID = [A-Za-z_][A-Za-z_0-9]*
 "para"		{ log("Palavra reservada", yytext()); return new Symbol(sym.PARA); }
 "ate"		{ log("Palavra reservada", yytext()); return new Symbol(sym.ATE); }
 "faca"		{ log("Palavra reservada", yytext()); return new Symbol(sym.FACA); }
+"se"		{ log("Palavra reservada", yytext()); return new Symbol(sym.SE); }
+
+"verdadeiro"		{ log("Contante booleana", yytext()); return new Symbol(sym.VERDADEIRO); }
 
 
 {CONSTANTE_NUMERICA} 	{ log("Constante numerica", yytext()); return new Symbol(sym.NUMERO); }

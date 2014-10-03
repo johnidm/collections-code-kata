@@ -1,19 +1,18 @@
-package br.com.johnidouglas.frontendcompiler.two;
+package sintatico;
 
 import java_cup.runtime.*; 
 import java.io.*;
 import java.util.*;
 
-terminal _WHILE, _TRUE, _FALSE, _PONTO_E_VIRGULA, _SEPARADOR_BOOL;
 
-non terminal __WHILE, __BOOL, __EXP, __BOOLS;
+terminal INICIO, FIM, PARA, ATE, FACA, NUMERO, ID, MULTIPLICACAO, ATRIBUICAO, SE, ;
+ 
+non terminal _INICIO_, _LACO_, _BLOCO_;
 
-start with __EXP;
+start with _INICIO_;
 
-__EXP   ::= __WHILE __EXP | ; 
-__WHILE ::= _WHILE __BOOLS _PONTO_E_VIRGULA;
+_INICIO_ ::= INICIO _BLOCO_ FIM;
 
-__BOOLS ::= __BOOLS _SEPARADOR_BOOL __BOOL | __BOOL;
+_BLOCO_ ::= _BLOCO_ _LACO_ | _LACO_;
 
-__BOOL  ::= _TRUE | _FALSE;
-
+_LACO_ ::= PARA NUMERO ATE NUMERO FACA ID ATRIBUICAO ID MULTIPLICACAO NUMERO;

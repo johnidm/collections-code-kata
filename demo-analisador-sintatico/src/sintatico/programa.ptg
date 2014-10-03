@@ -2,6 +2,8 @@ inicio
 
 para 1 ate 10 faca 
    valor <- valor * 10 
-   
-   
+
+se verdadeiro faca 
+  exibir 
+  
 fim
