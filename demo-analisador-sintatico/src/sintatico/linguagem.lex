@@ -20,6 +20,8 @@ private void log(String descricao, String lexema) {
 
 BRANCO = [\n| |\t\r]
 CONSTANTE_NUMERICA = 0|[1-9][0-9]*
+PONTO_FUTUANTE = {CONSTANTE_NUMERICA}\.{CONSTANTE_NUMERICA}
+
 ID = [A-Za-z_][A-Za-z_0-9]*
 
 %%
@@ -35,6 +37,8 @@ ID = [A-Za-z_][A-Za-z_0-9]*
 
 
 {CONSTANTE_NUMERICA} 	{ log("Constante numerica", yytext()); return new Symbol(sym.NUMERO); }
+{PONTO_FUTUANTE}		{ log("Ponto flutuante", yytext()); return new Symbol(sym.PONTO_FLUTUANTE); }
+
 {ID}					{ log("Id", yytext()); return new Symbol(sym.ID); }
 "*"						{ log("Operador de multiplicacao", yytext()); return new Symbol(sym.MULTIPLICACAO); }
 "<-" 					{ log("Sinal de atribuicao", yytext()); return new Symbol(sym.ATRIBUICAO); }
