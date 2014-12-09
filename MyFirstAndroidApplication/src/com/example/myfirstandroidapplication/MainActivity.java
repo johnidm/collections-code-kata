@@ -1,9 +1,14 @@
 package com.example.myfirstandroidapplication;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -31,4 +36,36 @@ public class MainActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	
+	private void showMessage(String title, String message) {
+		
+		AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+		alertDialog.setTitle(title);
+		alertDialog.setMessage(message);
+		alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int which) {
+				
+			}
+		});
+		
+		//alertDialog.setIcon(R.drawable.icon);
+		alertDialog.show();
+	}
+	
+	private void showMesage(String message) {
+		
+		Context context = getApplicationContext();
+		CharSequence text = message;
+		int duration = Toast.LENGTH_SHORT;
+
+		Toast toast = Toast.makeText(context, text, duration);
+		toast.show();
+	}
+	
+	public void onBtnClicked(View v)
+    { 
+		//showMesage("Hi, your email is classified with success, thanks");
+		showMessage("Dissable", "Your name went dissable.");
+		
+    }
 }

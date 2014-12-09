@@ -2,7 +2,12 @@
 <resources>
 
     <string name="app_name">MyFirstAndroidApplication</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="apresentation">Hi, my name is Johni</string>
+    
+    <string name="your_work">I am software developer</string>
+    
+    <string name="label_write_email">Write your e-mail:</string>
+    
     <string name="action_settings">Settings</string>
 
 </resources>
