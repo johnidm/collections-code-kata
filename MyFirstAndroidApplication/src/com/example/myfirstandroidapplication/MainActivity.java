@@ -14,7 +14,7 @@ public class MainActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+		super.onCreate(savedInstanceState);		
 		setContentView(R.layout.activity_main);
 	}
 
@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-
+	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle action bar item clicks here. The action bar will
@@ -64,7 +64,9 @@ public class MainActivity extends Activity {
 	
 	public void onBtnClicked(View v)
     { 
-		//showMesage("Hi, your email is classified with success, thanks");
+		
+		//TODO - Pegar do arquivo de strings as mensagens
+		showMesage("Hi, your email is classified with success, thanks");
 		showMessage("Dissable", "Your name went dissable.");
 		
     }
