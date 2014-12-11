@@ -4,5 +4,17 @@
     <string name="app_name">MeuDiarioContato</string>    
     <string name="action_settings">Configurações</string>
     <string name="message_splash">Carregando sistema ...</string>
-
+    
+    <string name="title_activity_login">LoginActivity</string>
+    
+    <string name="login">Login</string>
+    <string name="password">Senha</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancelar</string>
+     <string name="speack">Click aqui para falar</string>
+     <string name="msg_fail_login">Falha no login</string>
+     
+     <string name="msg_confirm_exit">Deseja sair ?</string>
+     <string name="msg_question">Pergunta</string>
+    
 </resources>
