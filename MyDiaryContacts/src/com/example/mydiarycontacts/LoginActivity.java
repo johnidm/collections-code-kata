@@ -53,7 +53,7 @@ public class LoginActivity extends Activity implements OnClickListener, OnFocusC
 			}
 		});
 		*/
-		alertDialog.setNegativeButton("Não", null);
+		alertDialog.setNegativeButton("NÃ£o", null);
 		alertDialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
 			
 			@Override
@@ -74,7 +74,7 @@ public class LoginActivity extends Activity implements OnClickListener, OnFocusC
 		try {
 			startActivityForResult(intent, RETORNO);
 		} catch (ActivityNotFoundException a) {
-			showMesage("Opss! Não foi possível reconhecer sua voz.");					
+			showMesage("Opss! NÃ£o foi possÃ­vel reconhecer sua voz.");					
 		}
 		
 	}
@@ -197,13 +197,16 @@ public class LoginActivity extends Activity implements OnClickListener, OnFocusC
 			String username = edtUserName.getText().toString();
 						
 			if (password.equals("agenda") && username.equals("agenda")) {
-				showMesage("OK - Você logou");
+				showMesage("OK - VocÃª logou");
 				
 				// cria uma mesagem para o Android
 				Intent it = new Intent(LoginActivity.this, 
 						ListaContatoActivity.class);
 				
-				LoginActivity.this.startActivity(it);
+				
+				it.putExtra("Login", "agenda");
+				//LoginActivity.this.startActivity(it);
+				
 				LoginActivity.this.finish();
 				
 			} else {				
