@@ -1,9 +1,7 @@
-// GSON
-// HttpClient
-
-
 
 package com.example.mydiarycontacts;
+
+import com.example.mydiarycontacts.util.AppliedPolicy;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -18,26 +16,22 @@ public class SplashActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_splash);
-				
-		callWaitApp();	
-		
+					
+		AppliedPolicy.run();		
+		login();			
 	}
 
-	private void callWaitApp() {
+	private void login() {
 		Handler h = new Handler();
-				
-		// aguarda a tela de login
+	
 		h.postDelayed(new Runnable() {			
 			@Override
 			public void run() {
-				// cria uma mesagem para o Android
+	
 				Intent itLogin = new Intent(SplashActivity.this, 
 						LoginActivity.class);
-				
-				// chama tela de login
+	
 				startActivity(itLogin);
-				
-				//finalia a tela de splash
 				finish();
 			}
 		}, 4000);
@@ -47,9 +41,6 @@ public class SplashActivity extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {	
 		getMenuInflater().inflate(R.menu.splash, menu);
 		return true;
-		
-		
-		
 	}
 
 	@Override

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item android:id="@+id/mnNovoContato" 
+        android:title="@string/mnNewContact"
+        android:orderInCategory="1" android:icon="@drawable/about"></item>
+    <item android:id="@+id/mnSair" 
+        android:title="@string/mnExit"
+        android:icon="@drawable/exit"
+        android:orderInCategory="2"></item>
+    <item android:id="@+id/mnSobre" 
+        android:title="@string/mnAbout"
+        android:orderInCategory="1"></item>
+    <item android:id="@+id/mnConsultarCEP" android:title="Consultar CEP"></item>
+    <item android:id="@+id/mnTradutor" android:title="Tradutor"></item>
+    
+</menu>

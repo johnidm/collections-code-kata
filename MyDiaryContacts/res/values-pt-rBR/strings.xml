@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    
-    <string name="app_name">MeuDiarioContato</string>    
+
+    <string name="app_name">MeuDiarioContato</string>
     <string name="action_settings">Configurações</string>
     <string name="message_splash">Carregando sistema ...</string>
-    
     <string name="title_activity_login">LoginActivity</string>
-    
     <string name="login">Login</string>
     <string name="password">Senha</string>
     <string name="ok">Ok</string>
     <string name="cancel">Cancelar</string>
-     <string name="speack">Click aqui para falar</string>
-     <string name="msg_fail_login">Falha no login</string>
-     
-     <string name="msg_confirm_exit">Deseja sair ?</string>
-     <string name="msg_question">Pergunta</string>
-    
+    <string name="speack">Click aqui para falar</string>
+    <string name="msg_fail_login">Falha no login</string>
+    <string name="msg_confirm_exit">Deseja sair ?</string>
+    <string name="msg_question">Pergunta</string>
+    <string name="title_activity_lista_contato">Lista de Contatos</string>
+    <string name="msg_wellcome">Bem-vindo usuário %1$s</string>
+    <string name="mnNewContact">Novo contato</string>
+    <string name="mnExit">Sair</string>
+    <string name="mnAbout">Sobre</string>
+
 </resources>

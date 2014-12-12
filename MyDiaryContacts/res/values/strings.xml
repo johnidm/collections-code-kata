@@ -14,6 +14,12 @@
     <string name="msg_fail_login">Fail in login</string>
     <string name="msg_confirm_exit">You want to leave ?</string>
     <string name="msg_question">Question</string>
-    <string name="title_activity_lista_contato">ListaContatoActivity</string>
-
+    <string name="title_activity_lista_contato">List of Contacts</string>
+    <string name="msg_wellcome">Wellcome user %1$s</string>
+    
+    <string name="mnNewContact">New contact</string>
+    <string name="mnExit">Exit</string>
+    <string name="mnAbout">About</string>
+    
+    
 </resources>
