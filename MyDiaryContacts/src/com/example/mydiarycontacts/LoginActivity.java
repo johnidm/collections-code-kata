@@ -2,6 +2,9 @@ package com.example.mydiarycontacts;
 
 import java.util.ArrayList;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -72,8 +75,15 @@ public class LoginActivity extends Activity implements OnClickListener, OnFocusC
 				
 				//showMesage(CrazyHTTPRequest.request("http://cep.republicavirtual.com.br/web_cep.php?cep=89900000&formato=json"));
 				try {
-					mesage(CrazyHTTPRequest.request("https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20141209T234029Z.5803500de6528911.910b9783819255adca607af43de6e63205762aca&lang=pt-en&text=" + edtUserName.getText()));
-				} catch (ExCrazyHTTPRequest e) {
+					String data = CrazyHTTPRequest.request("https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20141209T234029Z.5803500de6528911.910b9783819255adca607af43de6e63205762aca&lang=pt-en&text=" + edtUserName.getText());
+					
+					//Gson gson = new Gson();
+					JSONObject jObj = new JSONObject(data);
+										
+					
+				} catch (ExCrazyHTTPRequest e) {					
+					e.printStackTrace();
+				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}							

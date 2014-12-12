@@ -3,15 +3,30 @@
 
     <item android:id="@+id/mnNovoContato" 
         android:title="@string/mnNewContact"
-        android:orderInCategory="1" android:icon="@drawable/about"></item>
+        android:orderInCategory="1" 
+        android:icon="@drawable/about"
+        android:showAsAction="always">
+    </item>
     <item android:id="@+id/mnSair" 
         android:title="@string/mnExit"
         android:icon="@drawable/exit"
-        android:orderInCategory="2"></item>
+        android:orderInCategory="2">
+        
+    </item>
     <item android:id="@+id/mnSobre" 
         android:title="@string/mnAbout"
-        android:orderInCategory="1"></item>
-    <item android:id="@+id/mnConsultarCEP" android:title="Consultar CEP"></item>
-    <item android:id="@+id/mnTradutor" android:title="Tradutor"></item>
+        android:orderInCategory="1">
+        
+    </item>
+    
+    <item android:id="@+id/mnConsultarCEP" 
+        android:title="Consultar CEP">
+        
+    </item>
+    <item android:id="@+id/mnTradutor" 
+        android:title="Tradutor">
+        
+    </item>
+    
     
 </menu>

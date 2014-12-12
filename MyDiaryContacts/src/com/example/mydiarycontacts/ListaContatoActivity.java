@@ -65,7 +65,8 @@ public class ListaContatoActivity extends Activity {
 			break;
 			
 		case R.id.mnNovoContato:
-			
+			Toast.makeText(this, "Novo contato", 
+					Toast.LENGTH_SHORT).show();
 			break;
 			
 		case R.id.mnSair:
