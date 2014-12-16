@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.mydiarycontacts.db.UsuarioHelper;
 import com.example.mydiarycontacts.recognizer.Recognizer;
 import com.example.mydiarycontacts.util.CrazyHTTPRequest;
 import com.example.mydiarycontacts.util.ExCrazyHTTPRequest;
@@ -125,8 +126,9 @@ public class LoginActivity extends Activity implements OnClickListener, OnFocusC
 			
 			String password = edtPassword.getText().toString();
 			String username = edtUserName.getText().toString();
+			UsuarioHelper usuarioHelper = new UsuarioHelper(this);
 			
-			if (password.equals("agenda") && username.equals("agenda")) {				
+			if (usuarioHelper.isLoginValido(username, password)) {							
 				show(username);							
 			} else {
 				fail();								

@@ -18,5 +18,31 @@
     <string name="mnNewContact">Novo contato</string>
     <string name="mnExit">Sair</string>
     <string name="mnAbout">Sobre</string>
+    <string name="mnRemover">Delete</string>
+    <string name="mnSMS">SMS</string>
+    <string name="mnLigar">Call</string>
+    <string name="title_activity_contato">Contato</string>
+    <string name="txtNome">Name:</string>
+    <string name="txtTelefone">Phone number:</string>
+    <string name="txtLatitude">Latitude:</string>
+    <string name="txtLongitude">Longitude:</string>
+    <string name="btnMapa">Map</string>
+    <string name="btnSalvar">Save</string>
+    <string name="btnVoltar">Back</string>
+    <string name="create_sql">        
+        create table usuario (
+			codusu integer primary key autoincrement,
+			logusu varchar(15) not null,
+			pwdusu varchar(15) not null
+		);
+		
+		create table contato (
+			codcon integer primary key autoincrement,
+			nomcon varchar(40) not null,
+			telcon varchar(20) not null,
+			lat real,
+			lng real,
+			foto varchar(255)
+		);</string>
 
 </resources>
