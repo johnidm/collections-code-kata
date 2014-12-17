@@ -10,11 +10,16 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.example.mydiarycontacts.db.ContatoHelper;
+import com.example.mydiarycontacts.model.Contato;
 
 public class ContatoActivity extends Activity implements OnClickListener {
 
@@ -26,90 +31,153 @@ public class ContatoActivity extends Activity implements OnClickListener {
 	private Button mapa;
 	private Button salvar;
 	private Button voltar;
+
+	private Contato contato;
+
+	private ContatoHelper contatoHelper;
+	
+	private volatile String nomeFoto;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_contato);
-		
-		edtNome = (EditText ) findViewById(R.id.edtNome);
-		edtTelefone = (EditText ) findViewById(R.id.edtTelefone);
-		edtLatitude = (EditText ) findViewById(R.id.edtLatitude);
-		edtLongitude = (EditText )findViewById(R.id.edtLongitude);
-		imgFoto = (ImageView ) findViewById(R.id.imageView1);
+
+		edtNome = (EditText) findViewById(R.id.edtNome);
+		edtTelefone = (EditText) findViewById(R.id.edtTelefone);
+		edtLatitude = (EditText) findViewById(R.id.edtLatitude);
+		edtLongitude = (EditText) findViewById(R.id.edtLongitude);
+		imgFoto = (ImageView) findViewById(R.id.imageView1);
 		mapa = (Button) findViewById(R.id.btnMapa);
 		salvar = (Button) findViewById(R.id.btnSalvar);
 		voltar = (Button) findViewById(R.id.btnVoltar);
-		
+
 		mapa.setOnClickListener(this);
 		salvar.setOnClickListener(this);
 		voltar.setOnClickListener(this);
 		imgFoto.setOnClickListener(this);
+
+		edtLatitude.setEnabled(false);
+		edtLongitude.setEnabled(false);
+
+		contatoHelper = new ContatoHelper(this);
 		
+		if (getIntent() != null) {
+
+			if (getIntent().getSerializableExtra("contato") != null) {
+				contato = (Contato) getIntent().getSerializableExtra("contato");
+				
+				edtNome.setText(contato.getNome());
+				edtTelefone.setText(contato.getTelefone());				
+				
+				
+			} else {
+				contato = new Contato();
+			}
+		}
+
 	}
 
 	@Override
 	public void onClick(View v) {
-		
+
 		switch (v.getId()) {
 		case R.id.btnMapa:
-		
 
 			break;
-			
+
 		case R.id.btnSalvar:
 			
-			break;
+			String nome = edtNome.getText().toString();
+			String telefone = edtTelefone.getText().toString();
+			/// TODO incluir outras opções			
+			if (nome != null && !nome.trim().equals("")) {
+				
+				contato.setNome(nome);
+				
+				Log.i("IS", contato.getNome());
+				
+				contato.setTelefone(telefone);
+				
+				if (contato.getCodigo() == null) {
+					Log.i("IN", "Insert");
+					contatoHelper.insert(contato);
+				} else {
+					Log.i("IN", "Update");
+					contatoHelper.update(contato);
+				}
 			
+				Toast.makeText(this, "Contato salvo con sucesso",
+						Toast.LENGTH_SHORT).show();
+				
+				finish();
+				
+			} else {
+				// TODO exibir os campos que devem ser obrigatórios
+			}				
+			
+			break;
+
 		case R.id.btnVoltar:
 			finish();
 			break;
-			
+
 		case R.id.imageView1:
 			capturaFoto();
-			break;	
+			break;
 
 		default:
 			break;
 		}
 	}
-	
-	
+
 	private Uri getFotoUri(String nomeArquivo) {
-		
-		File imageDir =
-				new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES) + 
-				File.separator + "agendacontatos");
-				
+
+		File imageDir = new File(
+				Environment
+						.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
+						+ File.separator + "agendacontatos");
+
 		if (!imageDir.exists()) {
 			imageDir.mkdirs();
 		}
-				
-		return Uri.fromFile(new File(imageDir.getPath() + File.separator + nomeArquivo));		
-		
+
+		return Uri.fromFile(new File(imageDir.getPath() + File.separator
+				+ nomeArquivo));
+
 	}
-	
+
 	private void capturaFoto() {
-		Intent itCamera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-		itCamera.putExtra(MediaStore.EXTRA_OUTPUT, getFotoUri("foto.jpg"));
 		
-		startActivityForResult(itCamera, 1000);		
+		nomeFoto = gerarNomeFoto();
+		
+		Intent itCamera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+		itCamera.putExtra(MediaStore.EXTRA_OUTPUT, getFotoUri(nomeFoto));
+
+		startActivityForResult(itCamera, 1000);
 	}
-	
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		
+
 		if ((requestCode == 1000) && (resultCode == RESULT_OK)) {
-			Bitmap bitFoto = BitmapFactory.decodeFile(getFotoUri("foto.jpg").getPath());
-			imgFoto.setImageBitmap(bitFoto);
+			Bitmap bitFoto = BitmapFactory.decodeFile(getFotoUri(nomeFoto)
+					.getPath());
 			
+			
+			Bitmap bitScaleFoto = Bitmap.createScaledBitmap(bitFoto, imgFoto.getWidth(),
+					imgFoto.getHeight(), false);
+			
+			imgFoto.setImageBitmap(bitScaleFoto);
+
 		}
-			
-		
+
 	}
 	
-	
-	
+	private String gerarNomeFoto() {
+		long i = (long) (Math.random() * 1000000) + 1;
+		return i + ".jpg";
+	}
+
 }

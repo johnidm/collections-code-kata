@@ -1,6 +1,8 @@
 package com.example.mydiarycontacts.model;
 
-public class Usuario {
+import java.io.Serializable;
+
+public class Usuario implements Serializable {
 
 	private Integer codigo;
 	private String login;

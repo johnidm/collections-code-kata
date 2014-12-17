@@ -1,25 +1,33 @@
 package com.example.mydiarycontacts;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ContextMenu.ContextMenuInfo;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.mydiarycontacts.db.ContatoHelper;
+import com.example.mydiarycontacts.model.Contato;
 import com.example.mydiarycontacts.util.Exit;
 
 public class ListaContatoActivity extends Activity {
 
 	private ListView lstContatos;
+	
+	private ContatoHelper contatoHelper;
+	ArrayAdapter<Contato> adapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,20 +40,34 @@ public class ListaContatoActivity extends Activity {
 			Toast.makeText(this, getString(R.string.msg_wellcome, username),
 					Toast.LENGTH_SHORT).show();
 		}
-
-		String[] contatos = new String[100];
-		for (int i = 0; i < contatos.length; i++) {
-			contatos[i] = "Contato " + i;
-		}
-
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-				android.R.layout.simple_list_item_1, contatos);
-
+		
+		contatoHelper = new ContatoHelper(this);
+							
+		adapter = new ArrayAdapter<Contato>(this,
+				android.R.layout.simple_list_item_1, new ArrayList<Contato>());
 		lstContatos = (ListView) findViewById(R.id.lstContacts);
-		lstContatos.setAdapter(adapter);
+		
 		
 		registerForContextMenu(lstContatos);
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
+		atualizaListaContatos();
 
+		
+	}
+
+	private void atualizaListaContatos() {
+		adapter = new ArrayAdapter<Contato>(this,
+				android.R.layout.simple_list_item_1, contatoHelper.getAll());
+		
+		lstContatos.setAdapter(adapter);
+		adapter.setNotifyOnChange(true);
+		
+		adapter.notifyDataSetChanged();
 	}
 
 	@Override
@@ -108,24 +130,28 @@ public class ListaContatoActivity extends Activity {
 	public boolean onContextItemSelected(MenuItem item) {
 
 		AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
+		
+		Contato contato = adapter.getItem(info.position);
+		
+		
 
 		switch (item.getItemId()) {
 
 		case R.id.mnuEditar:
-
-			Toast.makeText(this,
-					"Editar" + lstContatos.getAdapter().getItem(info.position),
-					Toast.LENGTH_SHORT).show();
+			
+			Intent it = new Intent(this, ContatoActivity.class);
+			it.putExtra("contato", contato);
+			startActivity(it);
+			
 
 			break;
 
 		case R.id.mnuRemover:
 
-			Toast.makeText(
-					this,
-					"Remover" + lstContatos.getAdapter().getItem(info.position),
-					Toast.LENGTH_SHORT).show();
-
+			
+			contatoHelper.delete(contato);
+			atualizaListaContatos();
+			
 			break;
 
 		case R.id.mnuChamar:
@@ -134,7 +160,7 @@ public class ListaContatoActivity extends Activity {
 					"Chamar" + lstContatos.getAdapter().getItem(info.position),
 					Toast.LENGTH_SHORT).show();
 
-			String tel = "tel:000000";
+			String tel = "tel:" + contato.getTelefone();
 
 			Uri uri = Uri.parse(tel);
 
@@ -161,5 +187,6 @@ public class ListaContatoActivity extends Activity {
 		return super.onContextItemSelected(item);
 
 	}
-
+	
+	
 }

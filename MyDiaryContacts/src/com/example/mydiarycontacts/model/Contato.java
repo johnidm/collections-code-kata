@@ -1,6 +1,8 @@
 package com.example.mydiarycontacts.model;
 
-public class Contato {
+import java.io.Serializable;
+
+public class Contato implements Serializable {
 	
 	private Integer codigo;
 	private String nome;
@@ -48,6 +50,12 @@ public class Contato {
 		this.foto = foto;
 	}
 
+	
+	@Override
+	public String toString() {
+		
+		return this.getNome()+ " " + this.getTelefone();
+	}
 	
 	
 	
