@@ -80,7 +80,7 @@ public class ContatoHelper extends GenericTableHelper {
 	public List<Contato> getAll() {
 		List<Contato> contatos = new ArrayList<Contato>();
 		Cursor c = this.db.query(this.getTableName(), null, null, null, null,
-				null, null);
+				null, "nomcon COLLATE LOCALIZED ASC");
 		if (c != null) {
 			c.moveToFirst();
 			while (!c.isAfterLast()) {
@@ -106,9 +106,6 @@ public class ContatoHelper extends GenericTableHelper {
 	}
 
 	public void delete(Contato c) {
-		
-		File f = new File(c.getFoto());
-		f.delete();
 		
 		this.db.delete(this.getTableName(), "codcon = ?", new String[] { c.getCodigo()
 			.toString() });		

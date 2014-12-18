@@ -1,9 +1,12 @@
 package com.example.mydiarycontacts;
 
+import java.io.File;
 import java.util.ArrayList;
-import java.util.List;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -44,7 +48,7 @@ public class ListaContatoActivity extends Activity {
 		contatoHelper = new ContatoHelper(this);
 							
 		adapter = new ArrayAdapter<Contato>(this,
-				android.R.layout.simple_list_item_1, new ArrayList<Contato>());
+				R.layout.item_contato, new ArrayList<Contato>());
 		lstContatos = (ListView) findViewById(R.id.lstContacts);
 		
 		
@@ -62,7 +66,7 @@ public class ListaContatoActivity extends Activity {
 
 	private void atualizaListaContatos() {
 		adapter = new ArrayAdapter<Contato>(this,
-				android.R.layout.simple_list_item_1, contatoHelper.getAll());
+				R.layout.item_contato, contatoHelper.getAll());
 		
 		lstContatos.setAdapter(adapter);
 		adapter.setNotifyOnChange(true);
@@ -133,8 +137,6 @@ public class ListaContatoActivity extends Activity {
 		
 		Contato contato = adapter.getItem(info.position);
 		
-		
-
 		switch (item.getItemId()) {
 
 		case R.id.mnuEditar:
@@ -143,23 +145,24 @@ public class ListaContatoActivity extends Activity {
 			it.putExtra("contato", contato);
 			startActivity(it);
 			
-
 			break;
 
 		case R.id.mnuRemover:
-
+			if (!contato.getFoto().trim().equals("")) {
+				File f = new File(contato.getFoto());
+				if (f.exists())
+					f.delete();				
+			}
+						
+			contatoHelper.delete(contato);			
 			
-			contatoHelper.delete(contato);
 			atualizaListaContatos();
 			
 			break;
 
 		case R.id.mnuChamar:
-
-			Toast.makeText(this,
-					"Chamar" + lstContatos.getAdapter().getItem(info.position),
-					Toast.LENGTH_SHORT).show();
-
+			
+			
 			String tel = "tel:" + contato.getTelefone();
 
 			Uri uri = Uri.parse(tel);
@@ -172,10 +175,32 @@ public class ListaContatoActivity extends Activity {
 
 		case R.id.mnuSms:
 
-			Toast.makeText(this,
-					"Sms" + lstContatos.getAdapter().getItem(info.position),
-					Toast.LENGTH_SHORT).show();
-
+			final Intent itSMS = new Intent(Intent.ACTION_VIEW);
+			
+			itSMS.setData(Uri.parse("smsto:"));
+			itSMS.setType("vnd.android-dir/mms-sms");
+			itSMS.putExtra("address", contato.getTelefone());
+			
+			final EditText edtMensagem = new EditText(this);
+			AlertDialog.Builder mensagem = new AlertDialog.Builder(this);
+			
+			mensagem.setTitle("SMS");
+			mensagem.setMessage("Digite a mensagem");
+			mensagem.setView(edtMensagem);
+			mensagem.setCancelable(false);
+			mensagem.setPositiveButton("OK", new OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					
+					itSMS.putExtra("msg_boby", edtMensagem.getText().toString());
+					
+					startActivity(itSMS);
+					
+				}
+			});
+			mensagem.show();
+			
 			break;
 
 		default:

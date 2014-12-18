@@ -47,7 +47,7 @@ public class ContatoActivity extends Activity implements OnClickListener {
 		edtTelefone = (EditText) findViewById(R.id.edtTelefone);
 		edtLatitude = (EditText) findViewById(R.id.edtLatitude);
 		edtLongitude = (EditText) findViewById(R.id.edtLongitude);
-		imgFoto = (ImageView) findViewById(R.id.imageView1);
+		imgFoto = (ImageView) findViewById(R.id.itemFoto);
 		mapa = (Button) findViewById(R.id.btnMapa);
 		salvar = (Button) findViewById(R.id.btnSalvar);
 		voltar = (Button) findViewById(R.id.btnVoltar);
@@ -68,8 +68,13 @@ public class ContatoActivity extends Activity implements OnClickListener {
 				contato = (Contato) getIntent().getSerializableExtra("contato");
 				
 				edtNome.setText(contato.getNome());
-				edtTelefone.setText(contato.getTelefone());				
+				edtTelefone.setText(contato.getTelefone());	
 				
+								
+			    if ((contato.getFoto() != null) && (!contato.getFoto().trim().equals(""))) {
+			    	carregaFoto( contato.getFoto() );
+			    }				
+						
 				
 			} else {
 				contato = new Contato();
@@ -122,7 +127,7 @@ public class ContatoActivity extends Activity implements OnClickListener {
 			finish();
 			break;
 
-		case R.id.imageView1:
+		case R.id.itemFoto:
 			capturaFoto();
 			break;
 
@@ -152,25 +157,35 @@ public class ContatoActivity extends Activity implements OnClickListener {
 		nomeFoto = gerarNomeFoto();
 		
 		Intent itCamera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+		
 		itCamera.putExtra(MediaStore.EXTRA_OUTPUT, getFotoUri(nomeFoto));
+		
+		itCamera.putExtra("return-data", true);
 
 		startActivityForResult(itCamera, 1000);
 	}
+	
+	
+	private void carregaFoto(String path) {
+		
+		Bitmap bitFoto = BitmapFactory.decodeFile(path);
+				
+		Bitmap bitScaleFoto = Bitmap.createScaledBitmap(bitFoto, imgFoto.getLayoutParams().width,
+				imgFoto.getLayoutParams().height, false);
+		
+		imgFoto.setImageBitmap(bitScaleFoto);		
+		
+	}
+	
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 
 		if ((requestCode == 1000) && (resultCode == RESULT_OK)) {
-			Bitmap bitFoto = BitmapFactory.decodeFile(getFotoUri(nomeFoto)
-					.getPath());
-			
-			
-			Bitmap bitScaleFoto = Bitmap.createScaledBitmap(bitFoto, imgFoto.getWidth(),
-					imgFoto.getHeight(), false);
-			
-			imgFoto.setImageBitmap(bitScaleFoto);
-
+			String path = getFotoUri(nomeFoto).getPath();
+			contato.setFoto(path);
+			carregaFoto(path);
 		}
 
 	}
