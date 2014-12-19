@@ -88,7 +88,13 @@ public class ContatoActivity extends Activity implements OnClickListener {
 
 		switch (v.getId()) {
 		case R.id.btnMapa:
-
+			
+			Intent itMapa = new Intent(this, MapaActivity.class);			
+			itMapa.putExtra("contato", contato);
+			
+			startActivityForResult(itMapa, 1001);
+			//startActivity(itMapa);
+			
 			break;
 
 		case R.id.btnSalvar:
@@ -186,12 +192,24 @@ public class ContatoActivity extends Activity implements OnClickListener {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 
-		if ((requestCode == 1000) && (resultCode == RESULT_OK)) {
-			String path = getFotoUri(nomeFoto).getPath();
-			contato.setFoto(path);
-			carregaFoto(path);
+		if (resultCode == RESULT_OK) {
+		
+			switch (requestCode) {
+			case 1000:
+				String path = getFotoUri(nomeFoto).getPath();
+				contato.setFoto(path);
+				carregaFoto(path);
+				
+				break;
+			case 1001:
+				contato = (Contato) data.getSerializableExtra("contato");
+				
+				edtLatitude.setText(contato.getLatitude().toString());
+				edtLongitude.setText(contato.getLongitude().toString());
+				
+				break;	
+			}
 		}
-
 	}
 	
 	private String gerarNomeFoto() {

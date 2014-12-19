@@ -416,15 +416,15 @@ containing a value of this type.
         public static final int speaker=0x7f020026;
     }
     public static final class id {
-        public static final int LinearLayout1=0x7f070022;
+        public static final int LinearLayout1=0x7f070029;
         public static final int ScrollView1=0x7f070014;
         public static final int action_settings=0x7f07002a;
         public static final int book_now=0x7f070010;
-        public static final int btnCancel=0x7f070026;
-        public static final int btnConsultaCEP=0x7f070028;
+        public static final int btnCancel=0x7f070025;
+        public static final int btnConsultaCEP=0x7f070027;
         public static final int btnMapa=0x7f07001e;
-        public static final int btnOk=0x7f070025;
-        public static final int btnRecordUsername=0x7f070027;
+        public static final int btnOk=0x7f070024;
+        public static final int btnRecordUsername=0x7f070026;
         public static final int btnSalvar=0x7f07001f;
         public static final int btnVoltar=0x7f070020;
         public static final int buyButton=0x7f07000a;
@@ -434,16 +434,16 @@ containing a value of this type.
         public static final int edtLatitude=0x7f07001d;
         public static final int edtLongitude=0x7f07001b;
         public static final int edtNome=0x7f070017;
-        public static final int edtPassword=0x7f070024;
+        public static final int edtPassword=0x7f070023;
         public static final int edtTelefone=0x7f070019;
-        public static final int edtUserName=0x7f070023;
+        public static final int edtUserName=0x7f070022;
         public static final int grayscale=0x7f070012;
         public static final int holo_dark=0x7f070005;
         public static final int holo_light=0x7f070006;
         public static final int hybrid=0x7f070004;
         public static final int itemFoto=0x7f070015;
         public static final int lstContacts=0x7f070021;
-        public static final int map=0x7f070029;
+        public static final int map=0x7f070028;
         public static final int match_parent=0x7f07000c;
         public static final int mnConsultarCEP=0x7f07002e;
         public static final int mnNovoContato=0x7f07002b;

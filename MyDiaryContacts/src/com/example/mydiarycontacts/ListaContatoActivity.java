@@ -95,9 +95,7 @@ public class ListaContatoActivity extends Activity {
 
 		case R.id.mnConsultarCEP:
 
-			Intent itMapa = new Intent(this, MapaActivity.class);
 			
-			startActivity(itMapa);
 			
 			break;
 		case R.id.mnTradutor:

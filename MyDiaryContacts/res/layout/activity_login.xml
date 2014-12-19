@@ -1,9 +1,8 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/LinearLayout1"
+    android:id="@+id/ScrollView1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
     android:paddingTop="20dp"
@@ -20,7 +19,6 @@
             android:layout_height="wrap_content"
             android:text="@string/login"
             android:textAppearance="?android:attr/textAppearanceLarge" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -33,7 +31,6 @@
             android:layout_width="279dp"
             android:layout_height="wrap_content"
             android:ems="10" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -78,7 +75,6 @@
                 android:layout_weight="1"
                 android:drawableLeft="@drawable/exit"
                 android:text="@string/cancel" />
-
         </LinearLayout>
     </LinearLayout>
 
@@ -98,4 +94,4 @@
         android:layout_marginTop="99dp"
         android:text="Button" />
 
-</LinearLayout>
+</ScrollView>

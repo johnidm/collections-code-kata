@@ -1,13 +1,15 @@
 package com.example.mydiarycontacts;
 
+import android.content.Intent;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
-import com.google.android.gms.maps.CameraUpdate;
+import com.example.mydiarycontacts.model.Contato;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.OnMapLongClickListener;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -17,34 +19,56 @@ public class MapaActivity extends FragmentActivity {
 	//private static final LatLng PINHALZINHO = new LatLng(-26.849500, -52.987243);
 	//private static final LatLng PINHALZINHO = new LatLng(-26.722713, -53.517202);
 	
-	
-
 	private GoogleMap map;
 
+	Contato contato = null;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_mapa);
 
 		map = ((SupportMapFragment) getSupportFragmentManager()
 				.findFragmentById(R.id.map)).getMap();
-
+				
+		if (getIntent() != null) {
+			contato = (Contato) getIntent().getSerializableExtra("contato");
+		}
 		
-		LocationManager lManger =
-				(LocationManager) getSystemService(LOCATION_SERVICE);
+		LatLng localAtual;
+		if (contato.getLatitude() != null && contato.getLongitude() != null) {
+			localAtual = new LatLng(contato.getLatitude(), contato.getLongitude());			
+		} else {
+			Location location = getPosicaoAtual();
+			localAtual = new LatLng(location.getLatitude(), location.getLongitude());		 
+		}		
+		
+		//LatLng myLatLang = new LatLng(location.getLatitude(), location.getLongitude());
+		
+		Marker atual = map.addMarker(new MarkerOptions().position(localAtual).title("Localização Atual"));
+		
+		map.moveCamera(CameraUpdateFactory.newLatLngZoom(localAtual, 15));
+		
+		map.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
 		
 		
-		Location location = lManger.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-		
-		LatLng myLatLang = new LatLng(location.getLatitude(), location.getLongitude());
-		
-		Marker atual = map.addMarker(new MarkerOptions().position(myLatLang).title("Localização Atual"));
-		
-		map.moveCamera(CameraUpdateFactory.newLatLngZoom(myLatLang, 15));
-		
-		
-		map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-		
+		map.setOnMapLongClickListener(new OnMapLongClickListener() {
+			
+			@Override
+			public void onMapLongClick(LatLng point) {
+				contato.setLatitude(point.latitude);
+				contato.setLongitude(point.longitude);
+				
+				Intent itMapa = new Intent();
+				itMapa.putExtra("contato", contato);
+				
+				setResult(RESULT_OK, itMapa);
+				
+				MapaActivity.this.finish();
+				
+			}
+		});
 		
 		
 		/*
@@ -121,4 +145,16 @@ public class MapaActivity extends FragmentActivity {
 		//asyncGeoCode
 		//		.execute("http://maps.googleapis.com/maps/api/geocode/json?latlng=-26.849500,-52.987243");
 	}
+
+	private Location getPosicaoAtual() {
+		LocationManager lManger =
+				(LocationManager) getSystemService(LOCATION_SERVICE);
+		
+		Location location = lManger.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+		return location;
+	}
+	
+	
+
+	
 }
