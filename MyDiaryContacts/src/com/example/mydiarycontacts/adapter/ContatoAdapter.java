@@ -1,8 +1,10 @@
 package com.example.mydiarycontacts.adapter;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +17,7 @@ import com.example.mydiarycontacts.model.Contato;
 
 public class ContatoAdapter extends ArrayAdapter<Contato> {
 
-	public ContatoAdapter(Context context, ArrayList<Contato> contatos) {
+	public ContatoAdapter(Context context, List<Contato> contatos) {
 		super(context, 0, contatos);	
 	}
 	
@@ -35,6 +37,16 @@ public class ContatoAdapter extends ArrayAdapter<Contato> {
 		
 		txtNome.setText(contato.getNome());
 		txtTelefone.setText(contato.getTelefone());
+		
+		if (contato.getFoto() != null) {
+		
+		Bitmap bitFoto = BitmapFactory.decodeFile(contato.getFoto());
+		
+		Bitmap bitScaleFoto = Bitmap.createScaledBitmap(bitFoto, imgFoto.getLayoutParams().width,
+				imgFoto.getLayoutParams().height, false);
+		
+		imgFoto.setImageBitmap(bitScaleFoto);
+		}
 		
 		// usar o carrgar foto
 		

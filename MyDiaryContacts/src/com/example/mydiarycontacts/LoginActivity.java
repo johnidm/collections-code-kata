@@ -1,12 +1,11 @@
 package com.example.mydiarycontacts;
 
 import java.util.ArrayList;
-
-import org.json.JSONException;
-import org.json.JSONObject;
+import java.util.List;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.View;
@@ -18,9 +17,11 @@ import android.widget.Toast;
 
 import com.example.mydiarycontacts.db.UsuarioHelper;
 import com.example.mydiarycontacts.recognizer.Recognizer;
+import com.example.mydiarycontacts.rest.Resposta;
 import com.example.mydiarycontacts.util.CrazyHTTPRequest;
 import com.example.mydiarycontacts.util.ExCrazyHTTPRequest;
 import com.example.mydiarycontacts.util.Exit;
+import com.google.gson.Gson;
 
 public class LoginActivity extends Activity implements OnClickListener, OnFocusChangeListener {
 
@@ -75,19 +76,30 @@ public class LoginActivity extends Activity implements OnClickListener, OnFocusC
 			public void onClick(View v) {			
 				
 				//showMesage(CrazyHTTPRequest.request("http://cep.republicavirtual.com.br/web_cep.php?cep=89900000&formato=json"));
-				try {
-					String data = CrazyHTTPRequest.request("https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20141209T234029Z.5803500de6528911.910b9783819255adca607af43de6e63205762aca&lang=pt-en&text=" + edtUserName.getText());
+				try {		
+					String text = Uri.encode(edtUserName.getText().toString());
+					String url = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20141209T234029Z.5803500de6528911.910b9783819255adca607af43de6e63205762aca&lang=pt-en&text=" + text;
 					
-					//Gson gson = new Gson();
-					JSONObject jObj = new JSONObject(data);
+					mesage(url);
+					
+					String data = CrazyHTTPRequest.request(url);
+					
+										
+					Gson g = new Gson();
+					Resposta rc = g.fromJson(data, Resposta.class);
+									
+					
+					List<String> texto = rc.getText();
+					
+					mesage("O texto traduzido é: " + texto.get(0));
+					
+					
 										
 					
 				} catch (ExCrazyHTTPRequest e) {					
 					e.printStackTrace();
-				} catch (JSONException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}							
+				}
+										
 			}
 
 		});

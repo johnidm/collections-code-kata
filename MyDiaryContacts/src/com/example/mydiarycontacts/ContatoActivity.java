@@ -147,6 +147,10 @@ public class ContatoActivity extends Activity implements OnClickListener {
 			imageDir.mkdirs();
 		}
 
+		Toast.makeText(this, imageDir.toString(),
+				Toast.LENGTH_SHORT).show();
+		
+		
 		return Uri.fromFile(new File(imageDir.getPath() + File.separator
 				+ nomeArquivo));
 

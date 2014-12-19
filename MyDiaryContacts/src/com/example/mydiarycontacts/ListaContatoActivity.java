@@ -22,6 +22,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.mydiarycontacts.adapter.ContatoAdapter;
 import com.example.mydiarycontacts.db.ContatoHelper;
 import com.example.mydiarycontacts.model.Contato;
 import com.example.mydiarycontacts.util.Exit;
@@ -31,7 +32,8 @@ public class ListaContatoActivity extends Activity {
 	private ListView lstContatos;
 	
 	private ContatoHelper contatoHelper;
-	ArrayAdapter<Contato> adapter;
+	
+	private ContatoAdapter adapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +49,7 @@ public class ListaContatoActivity extends Activity {
 		
 		contatoHelper = new ContatoHelper(this);
 							
-		adapter = new ArrayAdapter<Contato>(this,
-				R.layout.item_contato, new ArrayList<Contato>());
 		lstContatos = (ListView) findViewById(R.id.lstContacts);
-		
 		
 		registerForContextMenu(lstContatos);
 	}
@@ -65,8 +64,7 @@ public class ListaContatoActivity extends Activity {
 	}
 
 	private void atualizaListaContatos() {
-		adapter = new ArrayAdapter<Contato>(this,
-				R.layout.item_contato, contatoHelper.getAll());
+		adapter = new ContatoAdapter(this, contatoHelper.getAll());
 		
 		lstContatos.setAdapter(adapter);
 		adapter.setNotifyOnChange(true);
@@ -97,6 +95,10 @@ public class ListaContatoActivity extends Activity {
 
 		case R.id.mnConsultarCEP:
 
+			Intent itMapa = new Intent(this, MapaActivity.class);
+			
+			startActivity(itMapa);
+			
 			break;
 		case R.id.mnTradutor:
 
