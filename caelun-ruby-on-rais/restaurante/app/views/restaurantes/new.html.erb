@@ -1,0 +1,15 @@
+<h1>Adicionando um restaurante</h1>
+
+
+
+
+<%= form_for :restaurante, url: {action: "create"}  do |f| %>
+	Nome: <%= f.text_field :nome %><br />
+	Endereço: <%= f.text_field :endereco %><br />
+	Especialidade: <%= f.text_field :especialidade %><br />
+
+	<%= submit_tag "Create" %>
+<% end %>
+
+
+<td><%= link_to "Back", { :action => "index" } %></td>

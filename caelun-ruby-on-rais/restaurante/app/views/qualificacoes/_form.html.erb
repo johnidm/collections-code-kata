@@ -1,0 +1,17 @@
+<%= form_for(@qualificacao) do |f| %>
+  <% if @qualificacao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@qualificacao.errors.count, "error") %> prohibited this qualificacao from being saved:</h2>
+
+      <ul>
+      <% @qualificacao.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

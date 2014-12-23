@@ -1,0 +1,34 @@
+<h1>Listagem de restaurantes</h1>
+
+<%= render :partial => "bemvindo" %>
+
+<table>
+	
+<tr>
+	
+	<th>Nome</th>
+	<th>Endereço</th>
+	<th>Especialidade</th>
+
+</tr>
+
+
+<% for restaurante in @restaurantes %>
+<tr>
+<td><%=h restaurante.nome %></td>
+<td><%=h restaurante.endereco %></td>
+<td><%=h restaurante.especialidade %></td>
+
+<td><%= link_to "Show", { :action => "show", :id => restaurante } %></td>
+<td><%= link_to "Edit", { :action => "edit", :id => restaurante } %></td>
+<td><%= link_to "Destroy", { :action => "destroy", :id => restaurante } %></td>
+<tr>
+
+
+<% end %>
+
+</table>
+
+<br />
+
+<%= link_to "New", { :action => "new" } %>
