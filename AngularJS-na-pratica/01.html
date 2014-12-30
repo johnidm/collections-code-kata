@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app>
+	<head>
+		<script src="angular.min.js"></script>
+		<script src="simpleController.js"></script>
+
+		
+	</head>
+	<body ng-controller="simpleController">
+		
+		<!--
+		<div>
+			<label>Name:</label>
+			<input type="text" ng-model="nome" placeholder="Enter a name here">
+			<hr>
+			<h1>Hello {{nome}}!</h1>
+		</div>
+		<div ng-init="quantity=1;price=5">
+			Quantity: <input type="number"	ng-model="quantity">
+			Costs:    <input type="number" ng-model="price">
+			Total in dollar: {{ quantity * price }}
+		</div>
+		-->
+
+		<div>
+			Hello <input type="text" ng-model="user.name" />
+			<hr />
+			<h1>Hello {{user.name}}</h1>
+		</div>
+		
+	</body>
+</html>

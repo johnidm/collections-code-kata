@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app>
+	<head>
+		<script src="angular.min.js"></script>
+		<script src="loopController.js"></script>
+
+		<script type="text/javascript">
+
+			function loopController($scope) {
+				$scope.fruits = ['banana', 'apple', 'orange', 'pinaple']
+			}
+
+		</script>
+		
+	</head>
+	<body ng-controller="loopController">
+				
+		<div>
+			<ul>
+				<li ng-repeat="fruit in fruits">{{fruit}}</li>
+			</ul>			
+
+		</div>
+		
+	</body>
+</html>
