@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<div ng-app="myapp" ng-controller="studentController">
+
+		<input name="firstname" type="text" ng-model="firstName" required>
+		<input name="lastname" type="text" ng-model="lastName" required>
+		<input name="email" type="email" ng-model="email" required>
+	
+		<button ng-click="reset()">Reset</button>
+	</div>
+
+	<script src="angular.min.js"></script>
+	<script>
+		angular.module("myapp", [])
+			.controller('studentController',function ($scope) {
+
+				$scope.reset = function() {
+					$scope.firstName = "Johni";
+					$scope.lastName = "Douglas";
+					$scope.email = "johni@johni.com";
+				}
+
+				$scope.reset();
+
+			});
+
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+	<div ng-app="mainApp">
+		
+		<p><a href="#addStudent">Add Student</a></p>
+		<p><a href="#viewStudent">View Student</a></p>
+
+		<div ng-view></div>
+
+		<script type="text/ng-template" id="addStudent.html">
+			<h2>Add Student</h2>
+
+			{{message}}
+		</script>
+
+		<script type="text/ng-template" id="viewStudent.html">
+			<h2>View Student</h2>
+
+			{{message}}
+		</script>
+
+	</div>
+
+	<script src="angular.min.js"></script>
+	<script src="angular-route.min.js"></script>
+
+	<script>
+
+		var mainApp = angular.module("mainApp", ['ngRoute']);
+
+		mainApp.config(['$routeProvider',function($routeProvider) {
+						
+			$routeProvider
+				.when('/addStudent', {
+					templateUrl : 'addStudent.html',
+					controller : 'AddStudentController'					
+				})
+				.when('/viewStudent', {
+					templateUrl : 'viewStudent.html',
+					controller : 'ViewStudentController'					
+				})
+				.otherwise({ 
+					redirectTo : '/addStudent' 
+				});
+		}]);
+
+		mainApp.controller('AddStudentController', function($scope){
+			$scope.message = "This page will be used to display add student";
+		});
+
+		mainApp.controller('ViewStudentController', function($scope){
+			$scope.message = "This page will be used to display all the student";
+		});
+
+
+	</script>
+
+</body>
+</html>

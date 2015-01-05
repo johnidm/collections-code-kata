@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title></title>
+</head>
+<body>
+<div ng-controller="FinanceController">
+	<input type="text" ng-model="salary">
+	<input type="text" ng-model="percentage">
+
+	<span>Result: {{result()}}</span>
+
+</div>
+
+<div ng-controller="GreetingController as greeting">
+{{greeting.greeting}} User! The current date/time is <span>{{ greeting.now | date : 'medium'}}</span>
+	
+</div>
+	<script src="../lib/angular/angular.min.js"></script>
+	<script src="app.js"></script>
+	<script src="controllers.js"></script>
+</body>
+</html>

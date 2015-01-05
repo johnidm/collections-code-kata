@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		
+		<div ng-app="myapp" ng-controller="studentController">
+			<div ng-include="'view/main.html'"></div>
+			<div ng-include="'view/subjects.html'"></div>
+		
+
+
+		<ul>
+
+			<li ng-repeat="student in students">
+				{{ student.Name }} - {{ student.RollNo }} - {{ student.Percentage }}
+			</li>
+
+		</ul>
+
+		<span>{{name}}</span>
+
+</div>
+		<script src="angular.min.js"></script>
+		<script>
+			angular.module("myapp", [])
+				.controller('studentController',function ($scope, $http) {
+					
+					//$scope.name = "Johni";
+
+					var url = "data.txt";
+
+					$http.get(url).success(function(response) {
+						$scope.students = response;	
+						$scope.name = "Johni";
+					});
+
+
+				});
+		</script>
+	</body>
+</html>

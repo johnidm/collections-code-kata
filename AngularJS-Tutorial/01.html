@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body ng-app="myapp">
+
+	<div ng-controller="HelloController">
+		<h2>Welcome {{helloTo.title}} to the world of Tutorialspoint!</h2>
+
+	</div>
+
+	<div ng-controller="TwoController">
+		<h2>Sample {{helloTo.title}} Now! It is cool.</h2>
+	</div>
+
+	<script src="angular.min.js"></script>
+	<script>
+
+		angular.module("myapp", [])
+			.controller('HelloController', function ($scope) {
+				$scope.helloTo = {};
+
+				$scope.helloTo.title = "Angular JS";
+			})
+			.controller('TwoController', function ($scope) {
+				$scope.helloTo = {};
+
+				$scope.helloTo.title = "Two Controller";
+			});
+
+	</script>
+</body>
+</html>

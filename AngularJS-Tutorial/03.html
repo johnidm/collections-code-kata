@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<style>
+			table, th, td {
+				border: 1px solid gray;
+				border-collapse: collapse;
+				padding: 5px;				
+			}
+
+			table tr:nth-child(odd) {
+				background-color: #f2f2f2;				
+			}
+
+			table tr:nth-child(even) {
+				background-color: #ffffff;				
+			}
+
+			
+
+
+		</style>
+	</head>
+	<body>
+		<div ng-app="myapp" ng-controller="studentController">
+			<table border="0">
+				<tr><td>Enter first name:</td><td><input type="text" ng-model="student.firstName"></td></tr>
+				<tr><td>Enter last name: </td><td><input type="text" ng-model="student.lastName"></td></tr>
+				<tr><td>Enter fees: </td><td><input type="text" ng-model="student.fees"></td></tr>
+				<tr><td>Enter subject: </td><td><input type="text" ng-model="subjectName"></td></tr>
+			</table>
+			
+			<br/>
+
+			<table border="0">
+				<tr>
+					<td>Name in Upper Case: </td>
+					<td>{{student.fullName() | uppercase}}</td>
+				</tr>
+			
+				<tr>
+					<td>Name in Lower Case: </td>
+					<td>{{student.fullName() |lowercase}}</td>
+				</tr>
+				<tr><td>fees: </td><td>{{student.fees | currency}}</td></tr>
+
+				<tr>
+					<td>Subject:</td>
+					<td>
+						<ul>
+							<li ng-repeat="subject in student.subjects | filter: subjectName |orderBy:'marks'">
+								{{ subject.name + ', marks:' + subject.marks }}
+							</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+
+			<table>
+				<tr><th>Name</th><th>Marks</th></tr>
+
+				<tr ng-repeat="subject in student.subjects">
+					<td>{{subject.name}}</td>
+					<td>{{subject.marks}}</td>
+				</tr>
+
+			</table>
+
+		</div>
+
+
+<script src="angular.min.js"></script>
+<script>
+	angular.module("myapp", [])
+		.controller('studentController' ,
+		function ($scope) {
+		$scope.student = {
+firstName: "Mahesh",
+lastName: "Parashar",
+fees:500,
+subjects:[
+{name:'Physics',marks:70},
+{name:'Chemistry',marks:80},
+{name:'Math',marks:65}
+],
+fullName: function() {
+var studentObject;
+studentObject = $scope.student;
+return studentObject.firstName + " " + studentObject.lastName;
+}
+};
+	});
+</script>
+
+</body>
+</html>

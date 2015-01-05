@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<div ng-app="" ng-init="countries=[{locale:'en-US', name:'United States'}, {locale:'en-GB', name:'United Kingdom'} ]">
+
+		Enter your name: <input type="text" ng-model="name">
+		<p>
+			Hello <span ng-bind="name"></span>!
+		</p>
+
+		<ol>
+			<li ng-repeat="country in countries">{{ 'Country : ' + country.name + ' - Locale : ' + country.locale}}</li>
+		</ol>
+
+
+	</div>
+	<script src="angular.min.js"></script>
+
+</body>
+</html>
