@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title ng-bind="title"></title>
+</head>
+
+<body ng-controller="SiteController">
+	<h2>Name Site: {{name}}</h2>
+	<span>{{publisher}} excels in {{type}} books</span>
+
+	<div ng-controller="BookController">
+		<h2>Name Book: {{name}}</h2>
+		<h3>Some of the popular books from {{publisher}}</h3>		
+		
+		<ul>		    
+		    <li ng-repeat="book in books">{{book}}</li>
+		</ul>
+	</div>
+
+	<script src="../lib/angular/angular.min.js"></script>
+	<script src="app.js"></script>
+	<script src="controllers.js"></script>
+</body>
+</html>
