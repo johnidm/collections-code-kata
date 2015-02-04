@@ -1,0 +1,2 @@
+olá="ola"
+print(olá)
