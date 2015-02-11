@@ -1,0 +1,52 @@
+<div ng-controller="ContatoController">
+
+<h1>Contato</h1>
+
+<form ng-submit="salva()">
+
+<div class="form-group">
+	<label for="nome">Nome</label>
+
+
+	
+	<input type="text" class="form-control" id="nome" placeholder="Fulano de Tal" name="nome" ng-model="contato.nome">
+
+
+	
+</div>
+
+<div class="form-group">
+	<label for="email">Email</label>
+
+
+	<div class="input-group">
+		
+		<span class="input-group-addon">@</span>
+		<input type="email" class="form-control" id="email" placeholder="email@email.com" name="email" ng-model="contato.email">
+	</div>
+
+
+</div>
+
+<div class="form-group">
+	<label for="emergencia">Emergência</label>
+
+
+	<select id="emergencia" class="form-control" ng-model="contato.emergencia" ng-options="contato._id as contato.nome for contato in contatos">
+		
+	</select>
+
+
+</div>
+
+<div>
+	<button type="submit" class="btn btn-primary">
+		Salvar
+	</button>
+
+	<a href="#/" class="btn btn-default">Voltar</a>
+</div>
+
+</form>
+
+</div>

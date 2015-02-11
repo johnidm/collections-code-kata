@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title></title>
+</head>
+<body>
+
+	<div ng-controller="UserController">
+		<form name="myform1">
+			<!--
+			<select name="country" ng-model="user.country" ng-options="country.id as country.desc for country in countries">
+
+				<option value="">Select one option</option>
+			</select>
+			<div>Selected country: {{user.country}}</div>
+	
+			<input type="radio" ng-model="user.choice" value="Coffee">
+			<input type="radio" ng-model="user.choice" value="Beer">
+			-->
+
+			<input type="checkbox" ng-model="user.choice" ng-true-value="yes" ng-false-value="no">
+			<div>I love {{user.choice}}</div>
+
+		</form>
+	</div>
+	
+
+	<script src="../lib/angular/angular.min.js"></script>
+	<script type="text/javascript">
+
+
+		angular.module('myApp', []).controller('UserController',
+		 	function ($scope) {
+				$scope.user = {};
+				$scope.countries = [{
+					id: 'US', 
+					desc: 'United States'
+				}, {
+					id: 'GB', 
+					desc: 'United Kingdon'
+				}, {
+					id: 'AS', 
+					desc: 'Australia'
+				}]	
+			}
+		)
+
+	</script>
+</body>
+</html>

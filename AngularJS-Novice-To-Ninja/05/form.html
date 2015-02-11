@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title></title>
+
+	<style>
+		
+		.error-message {
+			color: red;
+		}
+
+		input.ng-dirty.ng-invalid {
+			border-color: red;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<div ng-controller="UserController">
+		<form name="myform" ng-submit="saveUser()">
+			First name:
+			<input type="text" name="firtname" ng-model="user.firtname" ng-required="true" ng-minlength="2">
+
+			<span class="error-message" ng-show="myform.firtname.$dirty && myform.firtname.$error.required">informe seu nome</span>
+
+			<span class="error-message" ng-show="myform.firtname.$dirty && myform.firtname.$error.minlength">O nome deve ter pelo menos 2 letras</span>
+			<br />
+			Phone
+			<input type="text" name="phone" ng-model="user.phone" ng-minlength="10" ng-maxlength="10" ng-pattern="/^\d{10}$/">
+			<span class="error-message" ng-show="myform.phone.$dirty && myform.phone.$invalid">O nome deve ter pelo menos 2 letras</span>
+			<input type="submit" value="Save">
+
+		</form>
+	</div>
+	
+
+	<script src="../lib/angular/angular.min.js"></script>
+	<script type="text/javascript">
+
+		angular.module('myApp', []).controller('UserController',
+		 	function ($scope) {
+
+				$scope.user = {};
+
+				$scope.saveUser = function() {
+					if ($scope.myform.$valid)
+						console.log("Salvando o usuario");
+					else
+						console.log("Erro de validação"); 
+				}
+
+			}
+		)
+
+	</script>
+</body>
+</html>
