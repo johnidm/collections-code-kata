@@ -1,0 +1,56 @@
+form {
+	font-size: 0.8em;
+	padding: 10px;
+}
+
+label {
+	display: block;
+	font-weight: bold;
+
+}
+
+
+input {
+	border: 1px solid #ccc;
+	box-shadow: inset 2px 2px 2px #eee;
+	font-size: 0.9em;
+	padding: 2px 5px;
+}
+
+
+.conteiner {
+	height: 300px;
+	position: relative;
+	width: 200px;
+}
+
+.card {
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+
+}
+
+
+.card section {
+	background-color: #fff;
+	border-radius: 5px;
+	position: absolute;
+
+	backface-visibility: hidden;
+	
+
+}
+
+.signup {
+	transform: rotateY(180deg);
+}
+
+
+
+
+
+
+

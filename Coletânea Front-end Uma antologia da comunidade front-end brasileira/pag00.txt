@@ -1,0 +1,27 @@
+<div id="container">
+<nav>
+  <ul>
+    <li><img src="images/small_logo.png"/></li>
+    <li><a href="./home.html">Home</a></li>
+    <li><a href="./pizzaria.html">A pizzaria</a></li>
+    <li><a href="./horarios_precos.html">Horários e preços</a></li>
+    <li><a href="./sabores.html">Sabores</a> </li>
+    <li><a href="./bebidas.html">Bebidas</a></li>
+    <li><a href="./contato.html" class="last">Contato</a></li>
+  </ul>
+</nav>
+<section>
+  <div class="middle"> <br/>
+    <center>
+      <img src="./images/logo.png"/>
+    </center>
+    <br/>
+    Em um ambiente confortável e aconchegante, a Pizzaria Bologna traz a você os melhores e mais variados sabores da mais deliciosa pizza italiana. Por aqui, priorizamos o atendimento de qualidade, o bem-estar e um sabor único. Nossas pizzas combinam sabores aprovados por pizzaiolos apaixonados com ingredientes selecionados cuidadosamente por uma nutricionista experiente, trazendo uma experiência gastronômica única.
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+</section>
+</div>
+<footer>Pizzaria Bologna | Avenida Presidente Wenceslau Braz, 1172 - Guaira. Curitiba - PR | (41)3213-5200</footer>

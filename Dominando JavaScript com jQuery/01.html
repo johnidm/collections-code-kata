@@ -1,0 +1,48 @@
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<title>	</title>
+		</head>
+		<body>
+
+				<table>	
+				<tr>	
+					<td></td>			
+					<td>Total da compra</td>
+					<td><div id="total">R$ 29,00</div></td>
+					<td></td>
+
+				</tr>
+				</table>
+
+ 				<script type="text/javascript">
+
+ 				function moneyTextToFloat(text) {
+ 					var cleanText = text.replace("R$ ", "").replace(",", ".");
+
+					return parseText(cleanText);
+
+ 				}
+
+ 				function floatToMoneyText(value) {
+
+ 					var text = (value < 1 ? "0" : "") + Math.floor(value * 100);
+
+ 					text = "R$ " + text;
+
+ 					return text.substr(0, text.length - 2) + "," + text.substr(-2);	
+
+ 				}
+
+				var total = document.getElementById("total");
+
+				
+				var formattedText = floatToMoneyText(moneyTextToFloat(total.innerHTML));
+
+				alert(formattedText === total.innerHTML);
+
+			</script>
+		
+
+		</body>
+		</html>		

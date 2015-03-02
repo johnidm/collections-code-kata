@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>	
+	<head>
+		<meta charset="utf-8">
+
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var pulaLinha = function() {
+				document.write("<hr>");
+			}
+
+			var mostra = function(frase) {
+				document.write("<big>" + frase + "<big>");
+				pulaLinha();
+			}
+
+			var calculaIMC = function(peso, altura) {
+				var imc = (peso / (altura * altura)).toFixed(2);
+				return imc;
+			}
+
+			//var peso = prompt("Informe o seu peso");
+			//mostra("Meu IMC é " + calculaIMC(peso, 1.64));
+
+			var vitorias = prompt("Vitorias");
+			var empates = prompt("Empates");
+			var pontos = (vitorias * 3) + parseInt(empates);
+			mostra(pontos);
+
+			if (pontos > 28) {
+				mostra("estamos indo bem");
+			}
+
+			
+
+
+			/* Comentrio á
+
+			linha */
+
+			//alert("Ola mundo");
+			mostra("Ola");			
+			mostra("Mundo");			
+			mostra("Minha idade é " + 25);
+			
+			var eu = 10, johni = 20, tu = 21;			
+			var soma = eu + johni + tu;
+			var media = soma  / 3;
+
+			mostra("A soma é " + soma);			
+			pulaLinha();
+			mostra("A média é " + Math.round(media));			
+			pulaLinha();
+			mostra("A média é " + media.toFixed(2));		
+			
+			console.log("log do sistema");
+
+		</script>
+	</body>
+</html>

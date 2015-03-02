@@ -1,0 +1,42 @@
+.abas {
+	position: relative;
+}
+
+.aba {
+	display: inline;
+}
+
+.aba > a {
+
+	float: left;
+	padding: 0.5em 1em;
+
+	background: linear-gradient(#fff, #eee);
+	border-width: 1px;
+	border-style: solid;;
+	border-color: #ccc #ccc #fff;
+
+}
+
+.aba:not(:target) a {
+	border-bottom: 0 none;
+
+}
+
+.conteudo {
+	position: absolute;
+	left: 0;
+	top: calc(2em + 4px); /* altura link + bordas */
+
+	z-index: -2;
+
+	border: 1px solid #ccc;
+
+	background-color: white;
+
+}
+
+.aba:target .conteudo {
+	z-index: -1;
+}
+

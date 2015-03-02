@@ -1,0 +1,20 @@
+.flexbox {
+	display: flexbox;
+	height: 60px;
+	width: 300px;
+}
+
+.box {
+	color: #fff;
+	display: block;
+	flex: auto;
+	font-weight: bold;
+	height: 30px;
+
+	line-height: 30px;
+	text-align: center;
+}
+
+.one { background-color: #8820dd }
+.two { background-color: #2bb15a }
+.tree { background-color: #755322 }

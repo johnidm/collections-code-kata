@@ -1,0 +1,9 @@
+.box {
+	
+	background-color: PapayaWhip;
+	height: 100px;
+	width: 100px;
+	position: fixed;
+	top: 30px;
+	left: 5px;
+}
