@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+	<script>
+
+		var req = new XMLHttpRequest();
+		req.open("GET","http://owl-links.herokuapp.com/api/v1/2F-aTxZ/links.json");
+		 
+		//2. Registrar uma função para lidar com o retorno
+		req.onload = function() {
+		   if (req.status == 200) {
+		        //Trata a resposta que veio em req.response
+		        alert(req.response);
+		        
+		   } else {
+		        //Houve algum problema?
+		        alert(Error(req.statusText)); 
+		   }
+		}
+		 
+		//3. Registrar uma função para lidar com erros de rede
+		req.onerror = function() {
+		    alert(Error("Erro de rede!"));
+		}
+		 
+		//4. Enviar a requisição
+		req.start();
+
+
+	</script>
+</body>
+</html>
