@@ -1,0 +1,5 @@
+require File.expand_path("livro")
+require File.expand_path("biblioteca")
+require File.expand_path("relatorio")
+require File.expand_path("banco_de_arquivos")
+require File.expand_path("formatar_moeda")

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exemplo UI Router</title>
+</head>
+<body ng-app="app">
+	
+    <a ui-sref="state1">State 1</a>
+    <a ui-sref="state2">State 2</a>
+
+	<div ui-view></div>
+
+	<script src="angular.min.js"></script>
+	<script src="angular-ui-router.min.js"></script>
+	
+	<script>
+	var app = angular.module('app', ['ui.router']);
+
+	
+    app.config(function($stateProvider, $urlRouterProvider) {
+  
+	  $urlRouterProvider.otherwise("/state1");
+	  
+	  $stateProvider
+	    .state('state1', {
+	      url: "/state1",
+	      templateUrl: "state1.html"
+	    })
+	    .state('state1.list', {
+	      url: "/list",
+	      templateUrl: "state1.list.html",
+	      controller: function($scope) {
+	        $scope.items = ["A", "List", "Of", "Items"];
+	      }
+	    })
+	    .state('state2', {
+	      url: "/state2",
+	      templateUrl: "state2.html"
+	    })
+	    .state('state2.list', {
+	      url: "/list",
+	        templateUrl: "state2.list.html",
+	        controller: function($scope) {
+	          $scope.things = ["A", "Set", "Of", "Things"];
+	        }
+	      })
+    });
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+--- !ruby/object:Livro
+titulo: TDD
+autor: Mauricio Aniche
+isbn: '123456'
+numero_de_paginas: 247
+preco: 69.9
+categoria: :testes
+
+--- !ruby/object:Livro
+titulo: Design Responsivo
+autor: Tarcio Zemel
+isbn: '654321'
+numero_de_paginas: 247
+preco: 58.9
+categoria: :web_design
+
+--- !ruby/object:Livro
+titulo: BDD
+autor: Fulano
+isbn: '123456'
+numero_de_paginas: 247
+preco: 69.9
+categoria: :testes
+
+--- !ruby/object:Livro
+titulo: TDD
+autor: Mauricio Aniche
+isbn: '123456'
+numero_de_paginas: 247
+preco: 69.9
+categoria: :testes
+
+--- !ruby/object:Livro
+titulo: Design Responsivo
+autor: Tarcio Zemel
+isbn: '654321'
+numero_de_paginas: 247
+preco: 58.9
+categoria: :web_design
+
+--- !ruby/object:Livro
+titulo: BDD
+autor: Fulano
+isbn: '123456'
+numero_de_paginas: 247
+preco: 69.9
+categoria: :testes
+
+--- !ruby/object:Livro
+titulo: TDD
+autor: Mauricio Aniche
+isbn: '123456'
+numero_de_paginas: 247
+preco: 69.9
+categoria: :testes
+
+--- !ruby/object:Livro
+titulo: Design Responsivo
+autor: Tarcio Zemel
+isbn: '654321'
+numero_de_paginas: 247
+preco: 58.9
+categoria: :web_design
+
+--- !ruby/object:Livro
+titulo: BDD
+autor: Fulano
+isbn: '123456'
+numero_de_paginas: 247
+preco: 69.9
+categoria: :testes
+
+--- !ruby/object:Livro
+titulo: TDD
+autor: Mauricio Aniche
+isbn: '123456'
+numero_de_paginas: 247
+preco: 69.9
+categoria: :testes
+
+--- !ruby/object:Livro
+titulo: Design Responsivo
+autor: Tarcio Zemel
+isbn: '654321'
+numero_de_paginas: 247
+preco: 58.9
+categoria: :web_design
+
+--- !ruby/object:Livro
+titulo: BDD
+autor: Fulano
+isbn: '123456'
+numero_de_paginas: 247
+preco: 69.9
+categoria: :testes
+
+--- !ruby/object:Livro
+titulo: TDD
+autor: Mauricio Aniche
+isbn: '123456'
+numero_de_paginas: 247
+preco: 69.9
+categoria: :testes
+
+--- !ruby/object:Livro
+titulo: Design Responsivo
+autor: Tarcio Zemel
+isbn: '654321'
+numero_de_paginas: 247
+preco: 58.9
+categoria: :web_design
+
+--- !ruby/object:Livro
+titulo: BDD
+autor: Fulano
+isbn: '123456'
+numero_de_paginas: 247
+preco: 69.9
+categoria: :testes
+
+--- !ruby/object:Livro
+titulo: TDD
+autor: Mauricio Aniche
+isbn: '123456'
+numero_de_paginas: 247
+preco: 69.9
+categoria: :testes
+
+--- !ruby/object:Livro
+titulo: Design Responsivo
+autor: Tarcio Zemel
+isbn: '654321'
+numero_de_paginas: 247
+preco: 58.9
+categoria: :web_design
+
+--- !ruby/object:Livro
+titulo: BDD
+autor: Fulano
+isbn: '123456'
+numero_de_paginas: 247
+preco: 69.9
+categoria: :testes
+
+--- !ruby/object:Livro
+titulo: TDD
+autor: Mauricio Aniche
+isbn: '123456'
+numero_de_paginas: 247
+preco: 69.9
+categoria: :testes
+
+--- !ruby/object:Livro
+titulo: Design Responsivo
+autor: Tarcio Zemel
+isbn: '654321'
+numero_de_paginas: 247
+preco: 58.9
+categoria: :web_design
+
+--- !ruby/object:Livro
+titulo: BDD
+autor: Fulano
+isbn: '123456'
+numero_de_paginas: 247
+preco: 69.9
+categoria: :testes
+
+--- !ruby/object:Livro
+titulo: TDD
+autor: Mauricio Aniche
+isbn: '123456'
+numero_de_paginas: 247
+preco: 69.9
+categoria: :testes
+
+--- !ruby/object:Livro
+titulo: Design Responsivo
+autor: Tarcio Zemel
+isbn: '654321'
+numero_de_paginas: 247
+preco: 58.9
+categoria: :web_design
+
+--- !ruby/object:Livro
+titulo: BDD
+autor: Fulano
+isbn: '123456'
+numero_de_paginas: 247
+preco: 69.9
+categoria: :testes
+
+--- !ruby/object:Livro
+titulo: TDD
+autor: Mauricio Aniche
+isbn: '123456'
+numero_de_paginas: 247
+preco: 69.9
+categoria: :testes
+
+--- !ruby/object:Livro
+titulo: TDD
+autor: Mauricio Aniche
+isbn: '123456'
+numero_de_paginas: 247
+preco: 69.9
+categoria: :testes
+
+--- !ruby/object:Livro
+titulo: TDD
+autor: Mauricio Aniche
+isbn: '123456'
+numero_de_paginas: 247
+preco: 69.9
+categoria: :testes
+

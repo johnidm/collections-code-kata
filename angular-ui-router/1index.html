@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>Exemplo ui-router</title>
+</head>
+<body ng-app="app">
+
+	<div ui-view></div>
+
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.13/angular-ui-router.min.js"></script>
+	
+	<script>
+	var app = angular.module('app', ['ui.router']);
+
+	app.config(function($stateProvider, $urlRouterProvider) { 		
+
+    $urlRouterProvider.otherwise('/');
+ 
+    $stateProvider
+        .state('home', {
+        	
+            url:'/',
+            templateUrl: '__index.html',
+            
+        })
+        .state('about', {
+            url:'/about',
+            templateUrl: 'templates/about.html',
+            controller: 'AboutController'
+        })
+ 
+	});
+
+	</script>
+</body>
+</html>

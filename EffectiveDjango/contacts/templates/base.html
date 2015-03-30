@@ -1,0 +1,28 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" media="screen">
+
+	<title></title>
+</head>
+<body class="container">
+
+	<div>
+		{{ user }}		
+		{% if user.is_anonymous %}
+			<a href="{ url 'django.contrib.auth.views.login' }">Login</a>
+		{% else %}
+			<a href="{ url 'django.contrib.auth.views.logout' }">Logout</a>
+		{% endif %}
+	</div>
+
+	{% block content %}
+	{% endblock %}
+
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>
