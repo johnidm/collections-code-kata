@@ -1,0 +1,8 @@
+{
+    "require": {
+        "guzzlehttp/guzzle": "~5.0",
+        "slim/slim": "2.*"
+       }
+
+
+}
