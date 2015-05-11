@@ -1,0 +1,6 @@
+venv/
+
+platao/platao/__pycache__/
+
+platao/students/__pycache__/
+platao/students/migrations/__pycache__/
